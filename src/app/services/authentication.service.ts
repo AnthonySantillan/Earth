@@ -26,4 +26,7 @@ export class AuthenticationService {
         map((res) => res)
       );
   }
+  getToken() {
+    return localStorage.getItem('token');
+  }
 }
