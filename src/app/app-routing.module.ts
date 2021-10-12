@@ -6,7 +6,6 @@ import { MainComponent } from './layout/main/main.component';
 const routes: Routes = [
   {
     path: '',
-    component: MainComponent,
     loadChildren: () => import('./authentication/authentication.module').then(m => m.AuthenticationModule)
   },
   {
@@ -17,7 +16,6 @@ const routes: Routes = [
   },
   {
     path: 'authentication',
-    component: MainComponent,
     loadChildren: () => import('./authentication/authentication.module').then(m => m.AuthenticationModule)
   },
 ];
