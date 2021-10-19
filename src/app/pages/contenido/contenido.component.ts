@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { UsersService } from '../../services/users.service';
+import { Router } from '@angular/router';
+import { HttpErrorResponse } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-contenido',
@@ -7,9 +11,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContenidoComponent implements OnInit {
 
-  constructor() { }
+  constructor(public usersService:UsersService, private router:Router) { }
 
   ngOnInit(): void {
+    this.getUsers();
   }
 
+  getUsers(){
+    this.usersService.getUsers().subscribe(
+      (res) =>{
+        this.usersService.users = res;
+      },err => {
+        if(err instanceof HttpErrorResponse){
+          this.router.navigate(['/authetication/login'])
+        }
+      }
+    )
+  }
 }

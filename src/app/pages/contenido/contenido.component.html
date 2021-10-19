@@ -80,11 +80,13 @@
                 nesciunt error ut quidem autem.</p>
         </div>
         <div class="row">
-            <div class="col-md-4">
+            
+            <div *ngFor = "let user of usersService.users" style="color: aliceblue;" class="col-md-4">
                 <div class="member-container">
                     <div class="member-details">
-                        <h5>Michelle B. Rowe</h5>
-                        <span>Creative director</span>
+                        <h5>{{user.name}} {{user.lastname}}</h5>
+                        <span>{{user.email}}</span><br>
+                        <span>{{user.card}}</span>
                         <ul class="list-inline">
                             <li class="list-inline-item"><a href="#"><img src="assets/images/instagram.svg" class="img-fluid"></a>
                             </li>
@@ -94,43 +96,11 @@
                             <li class="list-inline-item"><a href="#"><img src="assets/images/facebook.svg" class="img-fluid"></a></li>
                         </ul>
                     </div>
-                    <img src="../../../assets/images/member-01.jpg" class="img-fluid" alt="member 1">
+                    <img src="../../../assets/images/avatar2.jpg" class="img-fluid" alt="member 1">
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="member-container">
-                    <div class="member-details">
-                        <h5>Veronica D. Martin</h5>
-                        <span>Lead designer</span>
-                        <ul class="list-inline">
-                            <li class="list-inline-item"><a href="#"><img src="assets/images/instagram.svg" class="img-fluid"></a>
-                            </li>
-                            <li class="list-inline-item"><a href="#"><img src="assets/images/twitter.svg" class="img-fluid"></a></li>
-                            <li class="list-inline-item"><a href="#"><img src="assets/images/youtube.svg" class="img-fluid"></a></li>
-                            <li class="list-inline-item"><a href="#"><img src="assets/images/dribbble.svg" class="img-fluid"></a></li>
-                            <li class="list-inline-item"><a href="#"><img src="assets/images/facebook.svg" class="img-fluid"></a></li>
-                        </ul>
-                    </div>
-                    <img src="../../../assets/images/member-02.jpg" class="img-fluid" alt="member 2">
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="member-container">
-                    <div class="member-details">
-                        <h5>Richard A. Hair</h5>
-                        <span>Lead developer</span>
-                        <ul class="list-inline">
-                            <li class="list-inline-item"><a href="#"><img src="assets/images/instagram.svg" class="img-fluid"></a>
-                            </li>
-                            <li class="list-inline-item"><a href="#"><img src="assets/images/twitter.svg" class="img-fluid"></a></li>
-                            <li class="list-inline-item"><a href="#"><img src="assets/images/youtube.svg" class="img-fluid"></a></li>
-                            <li class="list-inline-item"><a href="#"><img src="assets/images/dribbble.svg" class="img-fluid"></a></li>
-                            <li class="list-inline-item"><a href="#"><img src="assets/images/facebook.svg" class="img-fluid"></a></li>
-                        </ul>
-                    </div>
-                    <img src="../../../assets/images/member-03.jpg" class="img-fluid" alt="member 3">
-                </div>
-            </div>
+
+            
         </div>
     </div>
 </section>
