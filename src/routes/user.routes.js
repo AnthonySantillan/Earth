@@ -2,6 +2,7 @@ const express= require("express");
 const router = express.Router();
 const userModel = require ("../models/user");
 const app = express();
+const user = require('../controllers/user.controller');
 
 const jwt = require("jsonwebtoken");
 
@@ -20,6 +21,8 @@ router.post('/login', async (req,res)=>{
     if(user.password !== password) return res.status(401).send('password error');
     const token = await jwt.sign({_id: user._id},'secretkey');
     res.status(200).json({token});
-})
+});
+
+router.get("/users",user.getUsers);
 
 module.exports = router;
