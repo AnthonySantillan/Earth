@@ -7,16 +7,13 @@
     </a>
     <ul class="nav justify-content-end">
         <li class="nav-item">
-            <a class="nav-link" href="#">Inicio</a>
+            <a class="nav-link" routerLink = "/pages/contenido" routerLinkActive = "active">Inicio</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Contenido</a>
+            <a class="nav-link" routerLink = "/pages/profiles" routerLinkActive = "active"><i class="far fa-user"></i></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Acerda de.</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" (click)='auth.Logout()'>Cerrar Session</a>
+            <a class="nav-link" (click)='auth.Logout()'><i class="fas fa-sign-out-alt"></i></a>
         </li>
         <!-- <li class="nav-item">
             <i class="fas fa-user navbar-brand"></i>
