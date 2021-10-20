@@ -25,4 +25,8 @@ router.post('/login', async (req,res)=>{
 
 router.get("/users",user.getUsers);
 
+router.get("/users/:id",user.getUser);
+
+router.delete("/users/:id",user.deleteUser);
+
 module.exports = router;
