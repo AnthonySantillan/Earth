@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../../services/users.service';
 import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -27,5 +28,13 @@ export class ContenidoComponent implements OnInit {
         }
       }
     )
+  }
+
+  deleteUser(_id:string){
+    this.usersService.deleteUser(_id).subscribe(
+      (res) =>{
+        this.getUsers();
+      }
+    );
   }
 }

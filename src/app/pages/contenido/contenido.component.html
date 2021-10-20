@@ -88,15 +88,12 @@
                         <span>{{user.email}}</span><br>
                         <span>{{user.card}}</span>
                         <ul class="list-inline">
-                            <li class="list-inline-item"><a href="#"><img src="assets/images/instagram.svg" class="img-fluid"></a>
-                            </li>
-                            <li class="list-inline-item"><a href="#"><img src="assets/images/twitter.svg" class="img-fluid"></a></li>
-                            <li class="list-inline-item"><a href="#"><img src="assets/images/youtube.svg" class="img-fluid"></a></li>
-                            <li class="list-inline-item"><a href="#"><img src="assets/images/dribbble.svg" class="img-fluid"></a></li>
-                            <li class="list-inline-item"><a href="#"><img src="assets/images/facebook.svg" class="img-fluid"></a></li>
+                            <li style="cursor: pointer;" class="list-inline-item"><a (click)="deleteUser(user._id)" >🗑️</a></li>
+                            <li style="cursor: pointer;" class="list-inline-item"><a >✏️</a></li>
                         </ul>
                     </div>
                     <img src="../../../assets/images/avatar2.jpg" class="img-fluid" alt="member 1">
+                    
                 </div>
             </div>
 
