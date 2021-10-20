@@ -79,79 +79,8 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui ea consequuntur, odit veniam mollitia
                 aliquam reiciendis dignissimos, vitae sapiente neque, cum dolorum. Suscipit expedita obcaecati
                 nesciunt error ut quidem autem.</p>
-        </div>
-        <div class="row">
-
-            <div *ngFor="let user of usersService.users" style="color: aliceblue;" class="col-md-4">
-                <div class="member-container">
-                    <div class="member-details">
-                        <h5>{{user.name}} {{user.lastname}}</h5>
-                        <span>{{user.email}}</span><br>
-                        <span>{{user.card}}</span>
-                        <ul class="list-inline">
-                            <li style="cursor: pointer;" class="list-inline-item"><a (click)="deleteUser(user._id)"><i
-                                        class="fas fa-trash"></i></a></li>
-                            <li data-bs-toggle="modal" data-bs-target="#exampleModal" style="cursor: pointer;"
-                                class="list-inline-item"><a><i class="fas fa-pencil-alt"></i></a></li>
-                            <div style="color: black;" class="modal fade" id="exampleModal" tabindex="-1"
-                                aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Formulario</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form>
-                                                <div class="row">
-                                                    <div class="mb-3 col-6">
-                                                        <label for="exampleInputEmail1"
-                                                            class="form-label">Nombre</label>
-                                                        <input type="text" class="form-control" id="exampleInputEmail1"
-                                                            aria-describedby="emailHelp">
-
-                                                    </div>
-                                                    <div class="mb-3 col-6">
-                                                        <label for="exampleInputEmail1"
-                                                            class="form-label">Apellido</label>
-                                                        <input type="text" class="form-control" id="exampleInputEmail1"
-                                                            aria-describedby="emailHelp">
-
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label for="exampleInputEmail1" class="form-label">Email</label>
-                                                        <input type="text" class="form-control" id="exampleInputEmail1"
-                                                            aria-describedby="emailHelp">
-
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label for="exampleInputPassword1"
-                                                            class="form-label">Cédula</label>
-                                                        <input type="text" class="form-control"
-                                                            id="exampleInputPassword1">
-                                                    </div>
-
-                                                    <button style="background-color:rgb(0, 225, 255);" type="submit"
-                                                        class="btn btn-primary">Guardar</button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary"
-                                                data-bs-dismiss="modal">Close</button>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </ul>
-                    </div>
-                    <img src="../../../assets/images/avatar2.jpg" class="img-fluid" alt="member 1">
-
-                </div>
-            </div>
-
+            <a routerLink="/pages/users" routerLinkActive="active"
+                class="tm-btn tm-btn-1 tm-link-to-services">Contactos</a>
 
         </div>
     </div>

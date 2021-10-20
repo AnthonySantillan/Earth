@@ -29,8 +29,12 @@ export class AuthenticationService {
   getToken() {
     return localStorage.getItem('token');
   }
+  getUser() {
+    return JSON.parse(localStorage.getItem('user'))
+  }
   Logout() {
     localStorage.removeItem('token');
+    localStorage.removeItem('user');
     this.router.navigate(['/authentication/login'])
   }
 }

@@ -6,20 +6,23 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class UsersService {
-  selectUser:User;
-  users:User[];
-  user:User;
+  selectUser: User;
+  users: User[];
+  user: User;
   private url = "http://localhost:4000/users"
 
-  constructor(private http:HttpClient) {
+  constructor(private http: HttpClient) {
     this.selectUser = new User();
-   }
-   getUsers(){
-     return this.http.get<User[]>(this.url);
-   }
-   deleteUser(_id:string){
-     return this.http.delete(this.url + `/${_id}`)
-   }
+  }
+  getUsers() {
+    return this.http.get<User[]>(this.url);
+  }
+  // getUser() {
+  //   return this.http.get(this.url + `/${_id}`);
+  // }
+  deleteUser(_id: string) {
+    return this.http.delete(this.url + `/${_id}`)
+  }
 
-   
+
 }

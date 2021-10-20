@@ -5,6 +5,7 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ProfilesComponent } from './profiles/profiles.component';
+import { UsersComponent } from './users/users.component';
 
 
 
@@ -12,6 +13,7 @@ import { ProfilesComponent } from './profiles/profiles.component';
   declarations: [
     ContenidoComponent,
     ProfilesComponent,
+    UsersComponent,
   ],
   imports: [
     CommonModule,
