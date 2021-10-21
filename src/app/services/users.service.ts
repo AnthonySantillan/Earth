@@ -24,5 +24,9 @@ export class UsersService {
     return this.http.delete(this.url + `/${_id}`)
   }
 
+  updateUser(user: User) {
+    return this.http.put(this.url + `/${user._id}`, user);
+  }
+
 
 }

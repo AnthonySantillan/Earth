@@ -12,10 +12,11 @@
                         <span>{{user.email}}</span><br>
                         <span>{{user.card}}</span>
                         <ul class="list-inline">
-                            <li style="cursor: pointer;" class="list-inline-item"><a (click)="deleteUser(user._id)"><i
-                                        class="fas fa-trash"></i></a></li>
+                            <li style="cursor: pointer;" class="list-inline-item"><a
+                                    (click)="deleteUser(user._id,userForm)"><i class="fas fa-trash"></i></a></li>
                             <li data-bs-toggle="modal" data-bs-target="#exampleModal" style="cursor: pointer;"
-                                class="list-inline-item"><a><i class="fas fa-pencil-alt"></i></a></li>
+                                class="list-inline-item"><a (click)="updateUser(user)"><i
+                                        class="fas fa-pencil-alt"></i></a></li>
                             <div style="color: black;" class="modal fade" id="exampleModal" tabindex="-1"
                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
@@ -26,37 +27,45 @@
                                                 aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                            <form>
+                                            <form #userForm="ngForm" (ngSubmit)="putUser(userForm)">
+                                                <input type="hidden" name="_id" #_id="ngModel"
+                                                    [(ngModel)]="usersService.selectUser._id">
                                                 <div class="row">
-                                                    <div class="mb-3 col-6">
+                                                    <div class="mb-3 col-6 form-group">
                                                         <label for="exampleInputEmail1"
                                                             class="form-label">Nombre</label>
-                                                        <input type="text" class="form-control" id="exampleInputEmail1"
-                                                            aria-describedby="emailHelp">
+                                                        <input type="text" name="name" #name="ngModel"
+                                                            [(ngModel)]="usersService.selectUser.name"
+                                                            placeholder="Enter your FullName" class="form-control">
+
 
                                                     </div>
-                                                    <div class="mb-3 col-6">
+                                                    <div class="mb-3 col-6 form-group">
                                                         <label for="exampleInputEmail1"
                                                             class="form-label">Apellido</label>
-                                                        <input type="text" class="form-control" id="exampleInputEmail1"
-                                                            aria-describedby="emailHelp">
+                                                        <input type="text" name="lastname" #name="ngModel"
+                                                            [(ngModel)]="usersService.selectUser.lastname"
+                                                            placeholder="Enter your FullName" class="form-control">
+
 
                                                     </div>
-                                                    <div class="mb-3">
+                                                    <div class="mb-3 form-group">
                                                         <label for="exampleInputEmail1" class="form-label">Email</label>
-                                                        <input type="text" class="form-control" id="exampleInputEmail1"
-                                                            aria-describedby="emailHelp">
+                                                        <input type="text" name="email" #name="ngModel"
+                                                            [(ngModel)]="usersService.selectUser.email"
+                                                            placeholder="Enter your FullName" class="form-control">
 
                                                     </div>
-                                                    <div class="mb-3">
+                                                    <div class="mb-3 form-group">
                                                         <label for="exampleInputPassword1"
                                                             class="form-label">Cédula</label>
-                                                        <input type="text" class="form-control"
-                                                            id="exampleInputPassword1">
+                                                        <input type="text" name="card" #name="ngModel"
+                                                            [(ngModel)]="usersService.selectUser.card"
+                                                            placeholder="Enter your FullName" class="form-control">
                                                     </div>
 
-                                                    <button style="background-color:rgb(0, 225, 255);" type="submit"
-                                                        class="btn btn-primary">Guardar</button>
+                                                    <button style="background-color:rgb(0, 225, 255);"
+                                                        data-bs-dismiss="modal">Guardar</button>
                                                 </div>
                                             </form>
                                         </div>
