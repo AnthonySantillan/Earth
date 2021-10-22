@@ -1,19 +1,19 @@
 #hola{
-    background-image: url('../../../assets/images/1.jpg');
+    background-image: url('../../../assets/images/pan2.jpeg');
     background-size: cover;
-    padding-top: 90px;   
+    padding-top: 25px;   
     min-height: 700px;
     color: black;
 }
 
-h1 {font-size: 66px;font-weight: 590;line-height: 130px;}
+h1 {font-size: 110px;font-weight: 400;line-height: 300px;}
 h2 { font-size: 48px; margin-bottom: 30px; }
 h3 { font-size: 33px; }
 h5 { margin-bottom: 0px; }
 
 p{
-    font-size: 18px;
-    color: #999999;
+    font-size: 20px;
+    color: #000000;
     line-height: 1.8;
     margin-bottom: 0;
 }
@@ -34,12 +34,7 @@ p{
 
 /*temas ñaño*/
 
-:root {
-    --dark-color: #1a1a1a;
-    --white-color: #ffffff;
-    --light-grey-color: #f5f5f5;
-    --gold-color: #ffb944;
-}
+
 
 * {
     box-sizing: border-box;
@@ -388,4 +383,3 @@ p {
   color: white;
   background-color: #875959;
 }
-
