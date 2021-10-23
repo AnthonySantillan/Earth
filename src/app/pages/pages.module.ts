@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ProfilesComponent } from './profiles/profiles.component';
 import { UsersComponent } from './users/users.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 
@@ -14,6 +15,7 @@ import { UsersComponent } from './users/users.component';
     ContenidoComponent,
     ProfilesComponent,
     UsersComponent,
+    NotFoundComponent,
   ],
   imports: [
     CommonModule,
