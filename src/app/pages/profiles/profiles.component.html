@@ -1,96 +1,69 @@
-<div class="wrapper">
-    <div class="page-header">
-        <div class="container align-items-center">
-            <div class="row">
-                <div class="col-lg-6 col-md-6">
-                    <h1 class="profile-title text-left">{{user.name}}</h1>
-                    <h5 class="text-on-back">01</h5>
-                    <p class="profile-description">
-                        Diseñar espacios arquitectónicos y urbanos en contextos y con necesidades específicas
-                        Construcción, manejo técnico y administrativo de obras.
-                        Utilización de diferentes escalas, utilizando técnicas, herramientas y medios de expresión convencional y digital.Gestión, consultoría, asesoría, interventoría de proyectos de arquitectura y urbanismo
-                        Investigación y docencia en arquitectura.
-                        Producción de publicaciones
-                        Planeamiento urbano-regional y de ordenamiento territorial.
-                    </p>
-                </div>
-                <div class="col-lg-4 col-md-6 ml-auto mr-auto">
-                    <div class="card card-coin card-plain">
-                        <div class="card-header">
-                            <img class="img-center img-fluid rounded-circle" src="../../../assets/profiles/mike.jpg" />
-                            <li data-bs-toggle="modal" data-bs-target="#exampleModal" style="cursor: pointer;"
-                                class="list-inline-item"><a><i class="fas fa-pencil-alt"></i></a></li>
-                            <div style="color: black;" class="modal fade" id="exampleModal" tabindex="-1"
-                                aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Actualizar informacion</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="mb-3">
-                                                <form>
-                                                    <div class="row">
-                                                        <div class="mb-3 col-6">
-                                                            <label for="exampleInputEmail1"
-                                                                class="form-label">Nombre</label>
-                                                            <input type="text" class="form-control"
-                                                                id="exampleInputEmail1" aria-describedby="emailHelp">
-
-                                                        </div>
-                                                        <div class="mb-3 col-6">
-                                                            <label for="exampleInputEmail1"
-                                                                class="form-label">Apellido</label>
-                                                            <input type="text" class="form-control"
-                                                                id="exampleInputEmail1" aria-describedby="emailHelp">
-
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <label for="exampleInputEmail1"
-                                                                class="form-label">Email</label>
-                                                            <input type="text" class="form-control"
-                                                                id="exampleInputEmail1" aria-describedby="emailHelp">
-
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <label for="exampleInputPassword1"
-                                                                class="form-label">Celular</label>
-                                                            <input type="text" class="form-control"
-                                                                id="exampleInputPassword1">
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <label class="form-label">Imagen de perfil</label>
-                                                            <input class="form-control" type="file" id="formFile">
-                                                        </div>
-                                                        <button type="submit" class="btn btn-primary"
-                                                            data-bs-dismiss="modal">Guardar</button>
-                                                    </div>
-                                                </form>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="info info-horizontal">
-                            <div class="icon icon-danger">
-                                <i class="tim-icons icon-mobile"> </i>
-                            </div>
-                            <div class="description">
-                                <h4 class="info-title">Datos</h4>
-                                <p>
-                                    {{userId.email}}<br />
-
-                                    +40 762 321 762 <br />
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<section>
+    <div class="text-container">
+        <p>Hola mi nombre es</p>
+        <p>I'M TOUSEEQ</p>
+        <P>I am software enginner <br>& designer</P>
+        <!-- <div class="input-group mb-3">
+            <input type="file" class="form-control" id="inputGroupFile02">
+            <label class="input-group-text" for="inputGroupFile02">Upload</label>
+        </div> -->
+        <!-- <button class="hire-btn">Cambiar foto</button>
+        <button class="down-cv"> Download cv</button> -->
+        <div class="picture">
+            <div class="input-group ">
+                <input type="file" class="form-control " id="inputGroupFile04" aria-describedby="inputGroupFileAddon04"
+                    aria-label="Upload">
+                <button class="btn btn-success" type="button" id="inputGroupFileAddon04">Subir foto</button>
             </div>
+
+            <!-- <button class="hire-btn">Cambiar foto</button> -->
         </div>
     </div>
+    <img src="../../../assets/profiles/james.jpg" alt="model" class="model">
+
+
+</section>
+<!-- <div class="about-container">
+    <img src="../../../assets/profiles/james.jpg" alt="model" class="">
+    <div class="about-text">
+        <p>About me</p>
+        <p>Devolper & Desinger</p>
+        <p>hole, mi nombre es.......</p>
+        <p>soy arquitecto</p>
+        <button>Hire me </button>
+        <button>Download cv </button>
+    </div>
 </div>
+<div class="services">
+    <div class="services-text">
+        <p>services</p>
+        <p>services required </p>
+        <p>texto</p>
+        <p>texto</p>
+        <div class="box-container">
+            <div class="box-1">
+                <span>1</span>
+                <p class="heading">Web Desinger</p>
+                <p class="details">detalles</p>
+                <button>Leer mas</button>
+            </div>
+            <div class="box-2">
+                <span>2</span>
+                <p class="heading">Web Desinger</p>
+                <p class="details">detalles</p>
+                <button>Leer mas</button>
+            </div>
+            <div class="box-3">
+                <span>3</span>
+                <p class="heading">Web Desinger</p>
+                <p class="details">detalles</p>
+                <button>Leer mas</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="contact-me">
+    <p>Si tienes un proyecto en mente</p>
+    <button>Contacta me</button>
+</div> -->

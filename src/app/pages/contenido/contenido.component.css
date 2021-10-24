@@ -383,3 +383,9 @@ p {
   color: white;
   background-color: #875959;
 }
+
+.title{
+    color: white;
+    text-align: center;
+    margin-top:200px;
+}
