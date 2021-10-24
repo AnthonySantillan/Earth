@@ -83,7 +83,7 @@ section { padding: 55px}
 
 .portfolio-details a h2, .portfolio-details a p {
     color: rgb(0, 0, 0);
-    -webkit-text-stroke: red;
+ 
     color: white; text-shadow: black 0.1em 0.1em 0.2em
     
 }
@@ -301,10 +301,14 @@ p {
 }
 
 
-.title{
+/*-----------------------------TITULO----------------------*/
+
+
+.title123{
+    text-shadow: 0.1em 0.1em 0.2em black;
     color: white;
     text-align: center;
-    margin-top:200px;
+    margin-top:170px;
 }
 
 /*------------------------------------  BOTON DE NEON  ----------------------------------------------------------------------------------
@@ -312,7 +316,7 @@ p {
 -------------------------------------------------------------------------------------*/
 
 .posicion-btn {
-    margin-top: 41%;
+    margin-top: 19%;
     margin-left: 37%;
 }
 .btn-neon{
@@ -381,4 +385,11 @@ p {
     bottom: 100%;
     transition: 0.7s;
     transition-delay: 0.75s;
+}
+
+/*--mapa*--*/
+
+#mapa1{
+    width: 500px;
+    height: 300px;
 }
