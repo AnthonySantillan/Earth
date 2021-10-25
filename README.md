@@ -1,2 +1,7 @@
-# Back_end 
-Creacion del backend para formulario de login y formulario de registro.
+# AdminPro - Backend
+
+Recuerden ejecutar 
+
+```
+npm install
+```
