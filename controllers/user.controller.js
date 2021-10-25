@@ -1,4 +1,4 @@
-const User = require("../models/user");
+const User = require("../models/usuario");
 
 const userCtrl = {};
 
@@ -9,7 +9,7 @@ userCtrl.getUsers = async(req, res, next) => {
 
 userCtrl.createUser = async (req, res, next) => {
   const user = new User({
-    nombre: req.body.name,
+    nombre: req.body.nombre,
     apellido: req.body.lastname,
     password: req.body.password,
     email: req.body.email,
