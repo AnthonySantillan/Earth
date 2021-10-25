@@ -1,27 +1,61 @@
+import { PipesModule } from './../pipes/pipes.module';
+import { AppRoutingModule } from './../app-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ContenidoComponent } from './contenido/contenido.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { PagesComponent } from './pages.component';
+import { SharedModule } from '../shared/shared.module';
 import { PagesRoutingModule } from './pages-routing.module';
+import { PerfilComponent } from './perfil/perfil.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
-import { ProfilesComponent } from './profiles/profiles.component';
-import { UsersComponent } from './users/users.component';
-import { NotFoundComponent } from './not-found/not-found.component';
+
+import { AdminUsuariosComponent } from './administrador/admin-usuarios/admin-usuarios.component';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
+
+import { NgxPaginationModule } from 'ngx-pagination';
+
+
+import { ChartsModule } from 'ng2-charts';
+
+
+
+
 
 
 
 @NgModule({
   declarations: [
-    ContenidoComponent,
-    ProfilesComponent,
-    UsersComponent,
-    NotFoundComponent,
+    PagesComponent,
+    DashboardComponent,
+    PerfilComponent,
+
+    AdminUsuariosComponent,
+    AccountSettingsComponent
+
+
+  ],
+
+  exports: [
+
+    PagesComponent,
+    DashboardComponent,
+
   ],
   imports: [
     CommonModule,
-    PagesRoutingModule,
-    HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    SharedModule,
+    AppRoutingModule,
+    PagesRoutingModule,
+    PipesModule,
+    NgxPaginationModule,
+    ChartsModule
   ]
 })
+
+
+
 export class PagesModule { }

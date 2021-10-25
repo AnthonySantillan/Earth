@@ -1,48 +1,35 @@
-import { NgModule } from '@angular/core';
+import { SidebarService } from './services/sidebar.service';
+import { SubirArchivoService } from './services/subir-archivo.service';
+import { UsuariosService } from './services/usuarios.service';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppComponent } from './app.component';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
-import { TopbarComponent } from './layout/topbar/topbar.component';
-import { FooterComponent } from './layout/footer/footer.component';
-import { MainComponent } from './layout/main/main.component';
-import { AuthGuard } from './auth.guard';
-import { TokenInterceptorService } from './services/token-interceptor.service';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-//material
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatDividerModule } from '@angular/material/divider';
+import { AuthModule } from './auth/auth.module';
+import { PagesModule } from './pages/pages.module';
+import { NopagefoundComponent } from './nopagefound/nopagefound.component';
+import { PipesModule } from './pipes/pipes.module';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TopbarComponent,
-    FooterComponent,
-    MainComponent,
+    NopagefoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    MatSidenavModule,
-    MatButtonModule,
-    MatIconModule,
-    MatDividerModule,
+    PagesModule,
+    AuthModule,
+    PipesModule,
+    NgxPaginationModule,
   ],
-  providers: [AuthGuard, {
-    provide: HTTP_INTERCEPTORS,
-    useClass: TokenInterceptorService,
-    multi: true,
-  }],
+  providers: [
+    SubirArchivoService,
+    SidebarService,
+    UsuariosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

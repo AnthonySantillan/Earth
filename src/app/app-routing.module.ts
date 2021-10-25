@@ -1,28 +1,28 @@
+
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from './auth.guard';
-import { MainComponent } from './layout/main/main.component';
+import { RouterModule, Routes, } from '@angular/router';
+
+
+
+
+
+
+
 
 const routes: Routes = [
-  {
-    path: '',
-    loadChildren: () => import('./authentication/authentication.module').then(m => m.AuthenticationModule)
-  },
-  {
-    path: 'pages',
-    component: MainComponent,
-    loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule),
-    canActivate: [AuthGuard]
-  },
-  {
-    path: 'authentication',
-    loadChildren: () => import('./authentication/authentication.module').then(m => m.AuthenticationModule)
-  },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+
+
+
+
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
+  declarations: [],
+  imports: [
+ RouterModule.forRoot( routes, { useHash: true }),
 
+  ],
+  exports: [ RouterModule]
+})
 export class AppRoutingModule { }
