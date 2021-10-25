@@ -39,8 +39,8 @@
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false"><img [src]="usuario.img | imagen" alt="user"
-                            class="profile-pic" /></a>
+                        aria-haspopup="true" aria-expanded="false">{{usuario.nombre}}<img [src]="usuario.img | imagen"
+                            alt="user" class="profile-pic" /></a>
                     <div class="dropdown-menu dropdown-menu-right animated fadeIn fast">
                         <ul class="dropdown-user">
                             <li>
@@ -56,7 +56,8 @@
                             </li>
                             <li role="separator" class="divider"></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="#"><i class="fa fa-power-off" (click)="cerrarSesion()"></i> Cerrar Sesión</a>
+                            <li><a href="javascript:void()" (click)="cerrarSesion()"><i class="fa fa-power-off"></i>
+                                    Cerrar Sesión</a>
                             </li>
                         </ul>
 

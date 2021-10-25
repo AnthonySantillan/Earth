@@ -13,8 +13,9 @@ Members
 
 .member-container {
  position: relative;
- margin: 10px;
+margin: 45px;
  margin-top: 320px;
+ background-color: rgb(22, 139, 139);
 }
 
 .member-details {
@@ -23,6 +24,9 @@ Members
  color: rgb(194, 191, 191);
  bottom: 0;
  left: 20px;
+ background-color: rgb(21, 148, 148);
+ border-radius: 10px;
+
 }
 
 .member-details span {
@@ -35,4 +39,9 @@ Members
 
 .img-fluid{
   border-radius: 10px;
+}
+
+span{
+  color: rgb(250, 246, 246);
+  margin-left: 10px;
 }

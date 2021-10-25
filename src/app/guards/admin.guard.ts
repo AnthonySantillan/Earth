@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import Swal from 'sweetalert2';
 import { UsuariosService } from '../services/usuarios.service';
@@ -9,16 +9,28 @@ import { UsuariosService } from '../services/usuarios.service';
 })
 export class AdminGuard implements CanActivate {
   constructor(
-    public _usuarioService: UsuariosService
+    public _usuarioService: UsuariosService,
+    private router: Router
   ) { }
-  canActivate(){
+  canActivate() {
+    if (this._usuarioService.loggedIn()) {
+      return true;
+    }
+    this.router.navigate(['/login']);
+    Swal.fire({
+      icon: 'info',
+      title: 'Oops...',
+      text: 'Primero logueese o registrese',
 
-    if ( this._usuarioService.usuario.role === 'ADMIN_ROLE') {
+    });
+    // return false;
+
+    if (this._usuarioService.usuario.role === 'ADMIN_ROLE') {
       return true;
     }
 
-    if ( this._usuarioService.usuario.role === 'USER_ROLE') {
-      console.log( 'Bloqueado por el  GUARD');
+    if (this._usuarioService.usuario.role === 'USER_ROLE') {
+      console.log('Bloqueado por el  GUARD');
       Swal.fire({
         icon: 'question',
         title: 'Oops...',
@@ -27,11 +39,11 @@ export class AdminGuard implements CanActivate {
       });
       return true;
     }
-    if ( this._usuarioService.usuario.role === 'VOCAL_ROLE') {
+    if (this._usuarioService.usuario.role === 'VOCAL_ROLE') {
       return true;
     }
-   else {
-      console.log( 'Bloqueado por el  GUARD');
+    else {
+      console.log('Bloqueado por el  GUARD');
       Swal.fire({
         icon: 'error',
         title: 'Oops...',

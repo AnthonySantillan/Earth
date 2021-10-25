@@ -17,7 +17,7 @@ export class SidebarComponent implements OnInit {
 
   usuario: Usuario;
 
-  constructor(private _usuarioService: UsuariosService,  public _sidebar: SidebarService,) { }
+  constructor(private _usuarioService: UsuariosService, public _sidebar: SidebarService,) { }
 
   ngOnInit() {
     this.usuario = this._usuarioService.usuario;
@@ -26,7 +26,7 @@ export class SidebarComponent implements OnInit {
     customInitFunctions();
   }
 
-  cerrarSesion(){
+  cerrarSesion() {
     this._usuarioService.logOut()
   }
 
