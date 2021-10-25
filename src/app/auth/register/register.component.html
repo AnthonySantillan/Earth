@@ -1,81 +1,103 @@
-<main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
-    <div class="container">
-        <div class="card login-card">
-            <div class="row no-gutters">
-                <div class="col-md-5">
-                    <img src="../../assets/images/login.jpg" alt="login" class="login-card-img">
-                </div>
-                <div class="col-md-7">
-                    <div class="card-body">
-                        <div class="brand-wrapper">
-                            <img src="" class="logo">
-                        </div>
-                        <form id="loginform" autocomplete="off" [formGroup]="registerForm" (ngSubmit)="crearUsuario()">
+<!DOCTYPE html>
+<html lang="en">
 
-                            <h3 class="box-title">Regístrate ahora</h3>
-                            <div class="form-group">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login Template</title>
+    <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
 
-                                <input class="form-control" type="text" placeholder="Name" formControlName="nombre">
-
+<body>
+    <main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
+        <div class="container">
+            <div class="card login-card">
+                <div class="row no-gutters">
+                    <div class="col-md-5">
+                        <img src="../../assets/images/login.jpg" alt="login" class="login-card-img">
+                    </div>
+                    <div class="col-md-7">
+                        <div class="card-body">
+                            <div class="brand-wrapper">
+                                <img src="" class="logo">
                             </div>
-                            <div class="form-group ">
+                            <form id="loginform" autocomplete="off" [formGroup]="registerForm"
+                                (ngSubmit)="crearUsuario()">
 
-                                <input class="form-control" type="text" placeholder="Email" formControlName="email">
+                                <h3 class="box-title">Regístrate ahora</h3>
+                                <div class="form-group">
 
-                            </div>
-                            <div class="form-group ">
+                                    <input class="form-control" type="text" placeholder="Name" formControlName="nombre">
 
-                                <input class="form-control" type="password" placeholder="Password"
-                                    formControlName="password">
+                                </div>
+                                <div class="form-group ">
 
-                            </div>
-                            <div class="form-group">
+                                    <input class="form-control" type="text" placeholder="Email" formControlName="email">
 
-                                <input class="form-control" type="password" placeholder="Confirm Password"
-                                    formControlName="password2">
+                                </div>
+                                <div class="form-group ">
 
-                            </div>
+                                    <input class="form-control" type="password" placeholder="Password"
+                                        formControlName="password">
 
-                            <div class="form-group row">
-                                <div class="col-md-12">
-                                    <div class="checkbox checkbox-primary p-t-0">
+                                </div>
+                                <div class="form-group">
 
-                                        <input id="checkbox-signup" type="checkbox" formControlName="terminos">
+                                    <input class="form-control" type="password" placeholder="Confirm Password"
+                                        formControlName="password2">
+
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-md-12">
+                                        <div class="checkbox checkbox-primary p-t-0">
+
+                                            <input id="checkbox-signup" type="checkbox" formControlName="terminos">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col text-danger">
+
+                                        <p *ngIf="campoNoValido('nombre')">* El nombre es obligatorio</p>
+                                        <p *ngIf="campoNoValido('email')">* El email es obligatorio y tiene que ser
+                                            válido</p>
+                                        <p *ngIf="contrasenasNoValidas()">* Las contraseñas deben de ser iguales</p>
+                                        <p *ngIf="aceptaTerminos()">* Debe de aceptar los términos de uso</p>
 
                                     </div>
                                 </div>
-                            </div>
 
-                            <div class="row">
-                                <div class="col text-danger">
+                                <div class="form-group text-center">
 
-                                    <p *ngIf="campoNoValido('nombre')">* El nombre es obligatorio</p>
-                                    <p *ngIf="campoNoValido('email')">* El email es obligatorio y tiene que ser
-                                        válido</p>
-                                    <p *ngIf="contrasenasNoValidas()">* Las contraseñas deben de ser iguales</p>
-                                    <p *ngIf="aceptaTerminos()">* Debe de aceptar los términos de uso</p>
+                                    <button
+                                        class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light"
+                                        type="submit">Registrarse</button>
 
                                 </div>
-                            </div>
-
-                            <div class="form-group text-center">
-
-                                <button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light"
-                                    type="submit">Registrarse</button>
-
-                            </div>
-                            <div class="form-group">
-                                <div class="text-center">
-                                    <p>¿Ya tienes una cuenta? <a routerLink="/login" class="text-info m-l-5"><b>Iniciar
-                                                Sesión</b></a></p>
+                                <div class="form-group">
+                                    <div class="text-center">
+                                        <p>¿Ya tienes una cuenta? <a routerLink="/login"
+                                                class="text-info m-l-5"><b>Iniciar Sesión</b></a></p>
+                                    </div>
                                 </div>
-                            </div>
-                        </form>
-                        <p class="login-card-footer-text">Si ya tienes cuenta <a style='cursor: pointer;'
-                                class="text-reset" routerLink="/login">Logeate aqui!</a></p>
+                            </form>
+                            <p class="login-card-footer-text">Si ya tienes cuenta <a style='cursor: pointer;'
+                                    class="text-reset" routerLink="/login">Logeate aqui!</a></p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</main>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
