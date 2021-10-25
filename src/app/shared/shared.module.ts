@@ -1,5 +1,4 @@
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BreadcrumsComponent } from './breadcrums/breadcrums.component';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule, DatePipe } from '@angular/common';
@@ -14,7 +13,6 @@ import { PipesModule } from '../pipes/pipes.module';
 @NgModule({
   declarations: [
 
-    BreadcrumsComponent,
     SidebarComponent,
     HeaderComponent,
     /* Avance de Indicadores */
@@ -23,7 +21,6 @@ import { PipesModule } from '../pipes/pipes.module';
 
   exports: [
 
-    BreadcrumsComponent,
     SidebarComponent,
     HeaderComponent,
     /* Avance de Indicadores */
