@@ -106,11 +106,12 @@
 
         <div class="row">
 
-            <div *ngFor="let usuario of usuarios" style="color: aliceblue;" class="col-md-4">
+            <div *ngFor="let usuario of usuarios let user of userService.users" style="color: aliceblue;"
+                class="col-md-4">
                 <div class="member-container">
                     <div class="member-details">
                         <img [src]="usuario.img | imagen" class="img-fluid">
-                        <h5>{{usuario.nombre}}</h5>
+                        <span>{{usuario.nombre}}</span><br>
                         <span>{{usuario.email}}</span><br>
 
                         <ul class="list-inline">
@@ -142,7 +143,7 @@
                                                 </thead>
 
                                                 <tbody>
-                                                    <tr *ngFor="let usuario of usuarios">
+                                                    <tr *ngFor="let usuario of usuarios let user of userService.users">
                                                         <td class="w70">
                                                             <img [src]="usuario.img | imagen"
                                                                 class="img-50 img-circle pointer">

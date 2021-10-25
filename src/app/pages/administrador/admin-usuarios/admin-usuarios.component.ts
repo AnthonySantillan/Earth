@@ -1,8 +1,10 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Usuario } from 'src/app/models/usuarios.models';
+import { UserService } from 'src/app/services/user.service';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 import Swal from 'sweetalert2';
-
 @Component({
   selector: 'app-admin-usuarios',
   templateUrl: './admin-usuarios.component.html',
@@ -15,10 +17,11 @@ export class AdminUsuariosComponent implements OnInit {
   totalRegistros: number = 0;
   cargando: boolean = true;
 
-  constructor(public _usuarioService: UsuariosService,) { }
+  constructor(public _usuarioService: UsuariosService, public userService: UserService, private router: Router) { }
 
   ngOnInit() {
     this.cargarUsuarios()
+    this.getUsers();
 
   }
   cargarUsuarios() {
@@ -110,5 +113,19 @@ export class AdminUsuariosComponent implements OnInit {
       .subscribe();
 
   }
+  getUsers() {
+    this.userService.getUsers().subscribe(
+      (res) => {
+        this.userService.users = res;
+      }, err => {
+        if (err instanceof HttpErrorResponse) {
+          if (err.status === 401) {
+            this.router.navigate(['/signin']);
+          }
+        }
+      }
+    );
+  }
+
 }
 
