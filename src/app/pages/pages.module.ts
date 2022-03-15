@@ -14,9 +14,10 @@ import { AdminUsuariosComponent } from './administrador/admin-usuarios/admin-usu
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 
 import { NgxPaginationModule } from 'ngx-pagination';
-
+import { UserPagComponent } from './user-pag/user-pag.component';
 
 import { ChartsModule } from 'ng2-charts';
+
 
 
 
@@ -29,9 +30,11 @@ import { ChartsModule } from 'ng2-charts';
     PagesComponent,
     DashboardComponent,
     PerfilComponent,
+    UserPagComponent,
 
     AdminUsuariosComponent,
-    AccountSettingsComponent
+    AccountSettingsComponent,
+    UserPagComponent
 
 
   ],
