@@ -22,6 +22,9 @@ export class RoleGuard implements CanActivate {
     if (this._usuarioService.usuario.role === 'USER_ROLE') {
       return true;
     }
+    if (this._usuarioService.usuario.role === 'PAG_ROLE') {
+      return true;
+    }
     else {
       console.log('Bloqueado por el  GUARD');
       Swal.fire({
