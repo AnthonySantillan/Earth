@@ -129,6 +129,15 @@ function obtenerMenu(ROLE) {
 
     }
 
+    if (ROLE === 'PAG_ROLE') {
+        menu[0].submenu.unshift(
+            { titulo: 'Inicio', url: '/dashboard' },
+
+        );
+
+
+    }
+
     return menu;
 
 }
