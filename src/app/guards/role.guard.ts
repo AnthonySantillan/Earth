@@ -7,23 +7,33 @@ import { UsuariosService } from '../services/usuarios.service';
 @Injectable({
   providedIn: 'root'
 })
-export class AdminGuard implements CanActivate {
+export class RoleGuard implements CanActivate {
   constructor(
     public _usuarioService: UsuariosService,
     private router: Router
   ) { }
   canActivate() {
-    if (this._usuarioService.loggedIn()) {
+  // return false;
+
+  if ( this._usuarioService.usuario.role === 'ADMIN_ROLE') {
+    return true;
+  }
+  
+    if (this._usuarioService.usuario.role === 'USER_ROLE') {
       return true;
     }
-    this.router.navigate(['/login']);
-    Swal.fire({
-      icon: 'info',
-      title: 'Oops...',
-      text: 'Primero logueese o registrese',
+    else {
+      console.log('Bloqueado por el  GUARD');
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Su usuario esta Inactivo',
 
-    });
-    // return false;
+      });
+      this._usuarioService.logOut();
+      return false;
+    };
+
 
   }
 
