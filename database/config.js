@@ -4,7 +4,7 @@ const chalk = require('chalk');
 const dbConnection = async() => {
 
     try {
-        await mongoose.connect( 'mongodb://localhost/angular-probando', {
+        await mongoose.connect( process.env.DB_CNN , {
             useNewUrlParser: true, 
             useUnifiedTopology: true,
             useCreateIndex: true,
