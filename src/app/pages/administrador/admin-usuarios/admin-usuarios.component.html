@@ -5,88 +5,78 @@
     <div class="container">
 
         <div class="row">
+            <div class="card" style="width: 18rem; padding: 2px;" *ngFor="let user of userService.users let usuario of usuarios" class="col-md-4 shadow-lg p-3 mb-5 bg-body rounded">
+                <img [src]="usuario.img | imagen"  class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">{{user.nombre}}</p>
+                    <span>{{user.email}}</span><br>
+                    <ul class="list-inline">
+                        <li style="cursor: pointer;" class="list-inline-item"><a
+                                (click)="deleteUser(user._id, userForm)"><i class="fas fa-trash"></i></a></li>
+                        <li data-bs-toggle="modal" data-bs-target="#exampleModal" style="cursor: pointer;"
+                            class="list-inline-item"><a (click)="editUser(user)"><i
+                                    class="fas fa-pencil-alt"></i></a></li>
+                        <div style="color: black;" class="modal fade" id="exampleModal" tabindex="-1"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Actualizar Usuario</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form #userForm="ngForm" (ngSubmit)="addUser(userForm)">
+                                            <input type="hidden" name="_id" #_id="ngModel"
+                                                [(ngModel)]="userService.selectedUser._id">
+                                            <label>Nombres</label>
 
-            <div *ngFor="let user of userService.users let usuario of usuarios" class="col-md-4">
-                <div class="member-container">
-                    <div class="member-details">
-                        <img [src]="usuario.img | imagen" class="img-50 img-circle pointer" class="img-fluid"
-                            style="border-radius:10px;">
-
-                        <h5 style="color: aliceblue;">{{user.nombre}}</h5>
-                        <span>{{user.email}}</span><br>
-                        <ul class="list-inline">
-                            <li style="cursor: pointer;" class="list-inline-item"><a
-                                    (click)="deleteUser(user._id, userForm)"><i class="fas fa-trash"></i></a></li>
-                            <li data-bs-toggle="modal" data-bs-target="#exampleModal" style="cursor: pointer;"
-                                class="list-inline-item"><a (click)="editUser(user)"><i
-                                        class="fas fa-pencil-alt"></i></a></li>
-                            <div style="color: black;" class="modal fade" id="exampleModal" tabindex="-1"
-                                aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Actualizar Usuario</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form #userForm="ngForm" (ngSubmit)="addUser(userForm)">
-                                                <!-- THE Id's User -->
-                                                <input type="hidden" name="_id" #_id="ngModel"
-                                                    [(ngModel)]="userService.selectedUser._id">
-                                                <label>Nombres</label>
-
-                                                <div class="form-group">
-                                                    <input type="text" name="nombre" #name="ngModel"
-                                                        [(ngModel)]="userService.selectedUser.nombre"
-                                                        placeholder="Enter your FullName" class="form-control">
-                                                </div>
-                                                <br>
-                                                <label>Email</label>
-                                                <div class="form-group">
-                                                    <input type="text" name="email" #name="ngModel"
-                                                        [(ngModel)]="userService.selectedUser.email"
-                                                        placeholder="Enter your FullName" class="form-control">
-                                                </div>
+                                            <div class="form-group">
+                                                <input type="text" name="nombre" #name="ngModel"
+                                                    [(ngModel)]="userService.selectedUser.nombre"
+                                                    placeholder="Enter your FullName" class="form-control">
+                                            </div>
+                                            <br>
+                                            <label>Email</label>
+                                            <div class="form-group">
+                                                <input type="text" name="email" #name="ngModel"
+                                                    [(ngModel)]="userService.selectedUser.email"
+                                                    placeholder="Enter your FullName" class="form-control">
+                                            </div>
 
 
-                                                <br>
-                                                <label>Rol</label>
+                                            <br>
+                                            <label>Rol</label>
 
-                                                <div class="form-group">
-                                                    <select [(ngModel)]="userService.selectedUser.role" name="role"
-                                                        class="form-control ">
-                                                        <option value="ADMIN_ROLE">ADMIN_ROLE</option>
-                                                        <option value="USER_ROLE">USER_ROLE</option>
-                                                        <option value="INACTIVO">INACTIVO</option>
+                                            <div class="form-group">
+                                                <select [(ngModel)]="userService.selectedUser.role" name="role"
+                                                    class="form-control ">
+                                                    <option value="ADMIN_ROLE">ADMIN_ROLE</option>
+                                                    <option value="USER_ROLE">USER_ROLE</option>
+                                                    <option value="INACTIVO">INACTIVO</option>
 
-                                                    </select>
+                                                </select>
 
-                                                </div>
+                                            </div>
 
-                                                <br><br>
-                                                <button class="btn btn-success" data-bs-dismiss="modal">Guardar</button>
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-bs-dismiss="modal">Cerrar</button>
-                                                <br><br>
+                                            <br><br>
+                                            <button class="btn btn-success" data-bs-dismiss="modal">Guardar</button>
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Cerrar</button>
+                                            <br><br>
 
-                                            </form>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <label for="">@2021 EARTH</label>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <label for="">@2021 EARTH</label>
 
-                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </ul>
-                    </div>
-                    <img style="border-radius:10px;" src="../../../../assets/profiles/square1.png" class="img-fluid"
-                        alt="member 1">
+                        </div>
+                    </ul>
                 </div>
             </div>
-
-
         </div>
     </div>
 </section>

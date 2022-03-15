@@ -1,6 +1,7 @@
 img.img-responsive {
     width: 170px; 
     height: 80px;
+
   }
   .logo{
     height: 25px;
@@ -9,5 +10,9 @@ img.img-responsive {
 }
 .title{
   margin-top: 25px;
-  text-decoration: none;
+  text-decoration:none;
+  color: white;
+}
+.profile-pic{
+  margin-left: 20px;
 }
