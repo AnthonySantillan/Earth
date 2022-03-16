@@ -25,9 +25,9 @@
                 <a class="navbar-brand" routerLink="/dashboard">
                     <img src="../../../assets/images/earth_PNG33.png" width="30" height="30" class="logo" alt="">
                 </a>
-                <a routerLink="/dashboard" class="title">
+                <label class="title">
                     Earth
-                </a>
+                </label>
 
             </ul>
             <!-- notoficaciones -->
@@ -88,7 +88,7 @@
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">{{usuario.nombre}}<img [src]="usuario.img | imagen"
+                        aria-haspopup="true" aria-expanded="false">{{usuario.nombre}} <img [src]="usuario.img | imagen"
                             alt="user" class="profile-pic" /></a>
                     <div class="dropdown-menu dropdown-menu-right animated fadeIn fast">
                         <ul class="dropdown-user">
