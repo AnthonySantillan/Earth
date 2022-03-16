@@ -30,8 +30,57 @@
                 </a>
 
             </ul>
-
-
+            <!-- notoficaciones -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle waves-effect waves-dark" (click)="getNotifications()" id="2"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="mdi mdi-email"></i>
+                    <div class="notify" *ngIf="notifications.length > 0">
+                        <span class="heartbit"></span>
+                        <span class="point"></span>
+                    </div>
+                </a>
+                <div class="dropdown-menu mailbox dropdown-menu-right animated fadeIn fast" aria-labelledby="2">
+                    <ul>
+                        <li>
+                            <div class="drop-title">Tienes {{ newNotifications }} notificaciones nuevas</div>
+                        </li>
+                        <li>
+                            <div class="message-center">
+                                <!-- Message -->
+                                <a *ngFor="let notification of notifications" style="cursor: pointer;"
+                                    (click)="viewNotification(notification)">
+                                    <div class="user-img">
+                                        <img [src]="notification.trasmitter.img | imagen" alt="user" class="img-circle">
+                                    </div>
+                                    <div class="mail-contnet">
+                                        <h5>{{ notification.trasmitter.nombre }}</h5>
+                                        <span class="mail-desc">
+                                            <b>Indicador: </b>{{ notification.title }}
+                                        </span>
+                                        <span class="mail-desc">
+                                            {{ notification.detalle }}
+                                        </span>
+                                        <div class="row">
+                                            <span class="time col-md-6">
+                                                {{ notification.fechaReporte | date: 'short' }}
+                                            </span>
+                                            <span class="time col-md-4 btn btn-primary text-white "
+                                                *ngIf="!notification.view">
+                                                New
+                                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="nav-link text-center" [routerLink]="'/dashboard/notificationAll'"> <strong>Ver
+                                    todas </strong> <i class="fa fa-angle-right"></i> </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
             <!-- ============================================================== -->
             <!-- User profile and search -->
             <!-- ============================================================== -->
