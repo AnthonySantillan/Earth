@@ -22,15 +22,15 @@ passport.use(
           user.password
         );
         if (validPassword) {
-          done(null, user, req.flash("message", "Bienvenido" + " " + user.username));
+          done(null, user, req.flash("message", "Welcome" + " " + user.username));
         } else {
-          done(null, false, req.flash("message", "Datos incorrecta"));
+          done(null, false, req.flash("message", "Data incorrect"));
         }
       } else {
         return done(
           null,
           false,
-          req.flash("message", "El nombre de usuario no existe.")
+          req.flash("message", "The username does not exist.")
         );
       }
     }
@@ -70,7 +70,7 @@ passport.use(
         if (usuarios) {
           const usuario = usuarios
           if (username == usuario.username) {
-            done(null, false, req.flash("message", "El nombre de usuario ya existe."))
+            done(null, false, req.flash("message", "Username already exist."))
           } else {
             const { contador, numeroUsuario, rolNumero } = req.body
             let nuevoUsuario = {

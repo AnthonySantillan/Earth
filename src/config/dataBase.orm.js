@@ -10,7 +10,7 @@ mysql.createConnection({
     password : process.env.DB_PASSWORD || "",
 }).then( connection => {
     connection.query(`CREATE DATABASE IF NOT EXISTS ${dbName};`).then((res) => {
-        console.info("Base de datos creada o comprobada correctamente");
+        console.info("Database created or verified successfully");
     })
 })
 
@@ -36,15 +36,15 @@ const sequelize = new Sequelize(
 
 sequelize.authenticate()
   .then(() => {
-    console.log('Conectado')
+    console.log('Connect')
   })
   .catch(err => {
-    console.log('No se conecto')
+    console.log('No connect')
   })
 
 sequelize.sync({ force: false })
   .then(() => {
-    console.log("Tablas sincronizadas")
+    console.log("synchronized tables")
   })
 
 const user = userModel(sequelize, Sequelize)
