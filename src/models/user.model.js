@@ -1,5 +1,5 @@
 const users =(sequelize, type) =>{
-    return sequelize.define('usuarios', {
+    return sequelize.define('users', {
         idUsuarios: {
             type: type.INTEGER,
             primaryKey: true,
@@ -8,12 +8,12 @@ const users =(sequelize, type) =>{
         username: type.STRING(99),
         password: type.STRING,
         email: type.STRING, 
-        creacionUsuarios:{
+        createnUsers:{
             type: 'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP'),
             allowNull: false
         },
-        actualizacionUsuarios:{
+        updateUsers:{
             type: 'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP '),
             allowNull: false
