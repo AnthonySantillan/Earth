@@ -14,8 +14,7 @@ mysql.createConnection({
     })
 })
 
-const userModel = require('../models/user.model')
-
+const userModel = require('../models/user.model');
 
 
 const sequelize = new Sequelize(
@@ -47,10 +46,10 @@ sequelize.sync({ force: false })
     console.log("synchronized tables")
   })
 
-const user = userModel(sequelize, Sequelize)
+const user = userModel(sequelize, Sequelize);
+
 
 //Relaciones 
-
 
 module.exports = {
   user
