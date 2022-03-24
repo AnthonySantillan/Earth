@@ -53,9 +53,6 @@ app.use((req, res, next) => {
     next();
 });
 
-//public
-app.use(express.static(path.join(__dirname, 'public')));
-//public
 
 
 //routes
