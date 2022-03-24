@@ -67,6 +67,12 @@ font-family: 'Oswald', sans-serif;
     .masthead h1 {
       font-size: 5.5rem;
     }
+
+  }
+  @media (max-width: 900px) {
+    scroll-container{
+      height: 100vh;
+      width:40vh ;    }
   }
 
   
