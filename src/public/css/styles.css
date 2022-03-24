@@ -37,6 +37,29 @@ font-family: 'Oswald', sans-serif;
     padding: 0;
   }
   
+
+  .a {
+    display: inline-block;
+    width: 50px;
+    text-decoration: none;
+  }
+
+  scroll-container {
+    display: block;
+    width: 1285px;
+    height: 650px;
+    overflow-y: scroll;
+    scroll-behavior: auto;
+    
+  }
+  .scroll-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 5em;
+  }
+
   @media (min-width: 992px) {
     .masthead {
       height: 100vh;

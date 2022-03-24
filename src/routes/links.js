@@ -31,5 +31,23 @@ router.get('/delete/:id', async (req, res) => {
 
 });
 
+router.get('/edit/:id', async (req, res) => {
+    const { id } = req.params;
+    const users = await pool.query('SELECT *FROM users WHERE id = ?', [id]);
+    res.render('users/edit', { user: users[0] })
 
+});
+
+router.post('/edit/:id', async (req, res) => {
+    const { id } = req.params;
+    const { name, email, description } = req.body;
+    const newUser = {
+        name,
+        email,
+        description
+    };
+    const users = await pool.query('UPDATE users set ? WHERE id = ?', [newUser, id]);
+    res.redirect('/links');
+
+});
 module.exports = router;
