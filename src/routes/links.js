@@ -3,7 +3,7 @@ const router = express.Router();
 const pool = require('../config/database');
 
 router.get('/user', (req, res) => {
-    res.render('users/add');
+    res.render('Pages/users/add');
 });
 router.post('/user', async (req, res) => {
     const { name, email, description } = req.body;
@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
     const users = await pool.query('SELECT *FROM users');
 
     //    console.log(users);
-    res.render('users/list', { users });
+    res.render('Pages/users/list', { users });
 });
 
 router.get('/delete/:id', async (req, res) => {
@@ -34,7 +34,7 @@ router.get('/delete/:id', async (req, res) => {
 router.get('/edit/:id', async (req, res) => {
     const { id } = req.params;
     const users = await pool.query('SELECT *FROM users WHERE id = ?', [id]);
-    res.render('users/edit', { user: users[0] })
+    res.render('Pages/users/edit', { user: users[0] })
 
 });
 
