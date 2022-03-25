@@ -1,3 +1,15 @@
+{{#if message}}
+
+<div class="alert alert-light alert-dismissible fade show mx-auto text-center  border-danger" role="alert"
+    style="color: rgb(216, 0, 0);">
+      <img src="https://media1.giphy.com/media/8L0Pky6C83SzkzU55a/giphy.gif" class="card-img-top" alt="...">
+    {{message}}
+    <button class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+    </button>
+</div>
+
+{{/if}}
+
 {{#if success}}
 
 <div class="alert alert-light alert-dismissible fade show mx-auto text-center  border-success" role="alert"
@@ -9,3 +21,4 @@
 </div>
 
 {{/if}}
+

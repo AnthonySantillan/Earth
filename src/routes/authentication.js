@@ -11,14 +11,16 @@ const { isLoggedIn } = require('../lib/auth');
     res.render('auth/signin');
   });
 
-  router.post('/signin', passport.authenticate('local.signin', {
+  router.post('/signin', (req, res, next) => {
  
-    
+    passport.authenticate('local.signin', {
       successRedirect: '/profile',
       failureRedirect: '/signin',
       failureFlash: true
+    })(req, res, next);
+
     
-  }));
+  });
 
 
   router.get('/signup', (req, res) => {
@@ -34,7 +36,7 @@ const { isLoggedIn } = require('../lib/auth');
   router.get('/profile', (req, res) => {
     // console.log(req.body);
 
-    res.send('profile');
+    res.render('Pages/user-profile/user-profile');
   });
 
 module.exports = router;

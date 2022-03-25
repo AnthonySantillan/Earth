@@ -11,20 +11,20 @@ passport.use('local.signin', new LocalStrategy({
   passwordField: 'password',
   passReqToCallback: true
 }, async (req, email, password, done) => {
-  const rows = await pool.query('SELECT * FROM users WHERE email = ?', [email]);
-
+  console.log(req.body);
+  const rows = await pool.query('SELECT * FROM users WHERE email = ?', [email])
   if (rows.length > 0) {
     const user = rows[0];
-    const validPassword = await helpers.matchPassword(password, user.password)
-    console.log(validPassword);
+    const validPassword = await helpers.matchPassword(password, user.password);
 
     if (validPassword) {
-      done(null, user, req.flash('success', 'Welcome ' + user.email));
+      done(null, user, req.flash('success','Bienvenido ' + user.name));
     } else {
-      done(null, false, req.flash('message', 'Incorrect Password'));
+      done(null, false, req.flash('message','Contraseña Incorecta'));
     }
-  } else {
-    return done(null, false, req.flash('message', 'The Username does not exists.'));
+
+  }else{
+return done(null, false, req.flash('message','El email no existe'));
   }
 }));
 
@@ -45,9 +45,8 @@ passport.use(
         name
       };
       newUser.password = await helpers.encryptPassword(password);
-
       const result = await pool.query('INSERT INTO users SET ?', [newUser]);
-      newUser.id=result.insertId;
+      newUser.id = result.insertId;
       return done(null, newUser);
     }
   )
