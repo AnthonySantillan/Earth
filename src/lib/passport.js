@@ -2,7 +2,7 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 
 const orm = require('../config/database');
-const pool = require('../config/database');
+const pool = require('../config/dataBase');
 const helpers = require("../lib/helpers");
 
 passport.use(
@@ -38,7 +38,8 @@ passport.use(
       newUser.password = await helpers.encryptPassword(password);
 
       const result = await pool.query('INSERT INTO users SET ?', [newUser]);
-      console.log(result);
+      newUser.id=result.insertId;
+      return done(null, newUser);
     }
   )
 );
