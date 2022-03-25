@@ -5,6 +5,12 @@ const pool = require('../config/database');
 router.get('/user', (req, res) => {
     res.render('Pages/users/add');
 });
+
+
+router.get('/profile', (req, res) => {
+    res.render('Pages/user-profile/user-profile');
+});
+
 router.post('/user', async (req, res) => {
     const { name, email, description } = req.body;
     const newUser = {
