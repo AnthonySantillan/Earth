@@ -1,13 +1,11 @@
 {{#if success}}
-<div class="container p-4">
-    <div class="row">
-        <div class="col-md-4 mx-auto">
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                {{success}}
-                <button class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                </button>
-            </div>
-        </div>
-    </div>
+
+<div class="alert alert-light alert-dismissible fade show mx-auto text-center  border-success" role="alert"
+    style="color: rgb(10, 119, 0);">
+    <img src="https://c.tenor.com/BntXpMlrGuEAAAAC/check-correct.gif" class="card-img-top" alt="...">
+    {{success}}
+    <button class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+    </button>
 </div>
+
 {{/if}}
