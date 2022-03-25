@@ -5,7 +5,7 @@ const exphbs = require('express-handlebars');
 const session = require('express-session');
 const passport = require('passport');
 const flash = require('connect-flash'); 
-const mysqlstore = require('express-mysql-session')(session);
+const mysqlstore = require('express-mysql-session');
 const bodyparser = require('body-parser');
 
 const { database } = require('./keys'); 
@@ -35,7 +35,7 @@ app.use(bodyparser.urlencoded({
 }));
 app.use(bodyparser.json());
 app.use(session({
-    secret: 'FINTECH',
+    secret: 'ARQUITECTOS',
     resave: false,
     saveUninitialized: false,
     store: new mysqlstore(database)

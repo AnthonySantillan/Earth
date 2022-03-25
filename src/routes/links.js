@@ -13,6 +13,7 @@ router.post('/user', async (req, res) => {
         description
     };
     await pool.query('INSERT INTO users set ?', [newUser]);
+    req.flash('success', 'Usuario guardado correctamente');
     res.redirect('/links');
 });
 
@@ -27,6 +28,8 @@ router.get('/', async (req, res) => {
 router.get('/delete/:id', async (req, res) => {
     const { id } = req.params;
     await pool.query('DELETE FROM users WHERE ID = ?', [id]);
+    req.flash('success', 'Usuario borrado correctamente');
+
     res.redirect('/links');
 
 });
@@ -47,6 +50,8 @@ router.post('/edit/:id', async (req, res) => {
         description
     };
     const users = await pool.query('UPDATE users set ? WHERE id = ?', [newUser, id]);
+    req.flash('success', 'Usuario actualizado correctamente');
+
     res.redirect('/links');
 
 });
