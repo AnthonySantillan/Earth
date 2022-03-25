@@ -46,18 +46,14 @@ font-family: 'Oswald', sans-serif;
 
   scroll-container {
     display: block;
-    width: 1285px;
+    width: 1270px;
     height: 650px;
     overflow-y: scroll;
     scroll-behavior: auto;
     
   }
-  .scroll-page {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    font-size: 5em;
+  scroll-container::-webkit-scrollbar{
+    display:none
   }
 
   @media (min-width: 992px) {

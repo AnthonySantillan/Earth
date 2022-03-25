@@ -49,7 +49,7 @@ router.post('/edit/:id', async (req, res) => {
         email,
         description
     };
-    const users = await pool.query('UPDATE users set ? WHERE id = ?', [newUser, id]);
+     await pool.query('UPDATE users set ? WHERE id = ?', [newUser, id]);
     req.flash('success', 'Usuario actualizado correctamente');
 
     res.redirect('/links');
