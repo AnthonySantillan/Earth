@@ -44,7 +44,8 @@ passport.use(
         name
       };
       newUser.password = await helpers.encryptPassword(password);
-      const result = await pool.query('INSERT INTO users SET ?', [newUser]);
+      // Saving in the Database
+      const result = await pool.query('INSERT INTO users SET ? ', newUser);
       newUser.id = result.insertId;
       return done(null, newUser);
     }
@@ -52,10 +53,11 @@ passport.use(
 );
 
 
-passport.serializeUser(function (user, done) {
-  done(null, user);
+passport.serializeUser((user, done) => {
+  done(null, user.id);
 });
 
-passport.deserializeUser(function (user, done) {
-  done(null, user);
+passport.deserializeUser(async (id, done) => {
+  const rows = await pool.query('SELECT * FROM users WHERE id = ?', [id]);
+  done(null, rows[0]);
 });

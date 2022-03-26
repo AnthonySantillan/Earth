@@ -8,6 +8,7 @@ const users =(sequelize, type) =>{
         name: type.STRING(99),
         password: type.STRING,
         email: type.STRING, 
+        profile_image: type.STRING,
         description: type.STRING, 
 
         createnUsers:{
