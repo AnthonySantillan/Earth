@@ -108,6 +108,8 @@ router.post('/image-profile',isLoggedIn, async (req, res) => {
       if (err) return res.status(500).send(err);
   
         pool.query('UPDATE users SET profile_image = ? WHERE id = ?', [sampleFile.name, req.user.id]) 
+
+        res.redirect('/profile');
    
       });
   });
