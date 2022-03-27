@@ -2,11 +2,14 @@
     <div class="container">
         <header class="header" id="header">
             <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+            <div class="header_toggle">
+<p>{{user.name}}</p>
+            </div>
             <div class="header_img">
                 {{#if user.profile_image}}
                 <img src="{{user.profile_image}}" loading="lazy" alt="User Profile">
                 {{else}}
-                <img src="/not-found-image.png" class="card__image" alt="..." alt="User Profile">
+                <img src="/not-found-image.png"  alt="..." alt="User Profile">
                 {{/if}}
             </div>
             <div>
