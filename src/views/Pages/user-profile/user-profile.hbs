@@ -1,5 +1,5 @@
 <form action="/links//image-profile" method="POST" encType="multipart/form-data">
-    <h3>Upload Profile Photo</h3>
+    <h3>Editar foto</h3>
     <input type="file" name="sampleFile" accept="image/*" />
     <input type="submit" class="btn btn-primary">
 </form>
@@ -16,7 +16,7 @@
                     {{else}}
                     <img src="/not-found-image.png" class="card__image" alt="..." alt="User Profile">
                     {{/if}}
-                    <h3>Welcome {{user.name}}</h3>
+                    <h3>Bienvenido {{user.name}}</h3>
                     <h4>{{user.email}}</h4>
                 </div>
             </div>
