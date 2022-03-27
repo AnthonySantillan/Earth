@@ -12,9 +12,14 @@
             <div class="col-md-3 ">
                 <div class="card " style="margin-bottom: 5px;">
                     <div class="card-body">
-                        <img style="height: 200px;"
-                            src="https://scontent.fuio16-1.fna.fbcdn.net/v/t39.30808-6/271245470_4713960955385477_3820747920663544057_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=9goKyRvOgUAAX9fIapR&_nc_oc=AQn5GTUUQX5xaVugtQJGdDBieVVJtdriUYpr_K6Dy4FKIeucXpuMeMJ4GMFhrJkW9vEoxNdOvEbyuCyiEi1tSSJq&_nc_ht=scontent.fuio16-1.fna&oh=00_AT_3RO7IvpS2KIW-5XqH31cT1FA2JpC7GmGizEpxHETqFQ&oe=62420E44"
-                            class="card-img-top" alt="...">
+                        {{#if profile_image}}
+                         <img class="card__image" src="{{profile_image}}" loading="lazy" alt="User Profile">
+                        {{else}}
+                        <img 
+                            src="https://www.publicdomainpictures.net/pictures/280000/nahled/not-found-image-15383864787lu.jpg"
+                            class="card__image" alt="...">
+                        {{/if}}
+
                         <p class="card-title text-uppercase text-center m-2" style="color: rgb(44, 142, 253);">
                             {{name}}
                         </p>
@@ -30,11 +35,11 @@
                             {{timeago createnUsers}}
                         </p>
                         <a class="btn btn-danger" href="/links/delete/{{id}}">
-                        <i class="fa-solid fa-trash-can"></i>
+                            <i class="fa-solid fa-trash-can"></i>
                             Delete
                         </a>
                         <a class="btn btn-secondary" href="/links/edit/{{id}}">
-                        <i class="fa-solid fa-pen-to-square"></i>
+                            <i class="fa-solid fa-pen-to-square"></i>
                             Edit
                         </a>
                     </div>

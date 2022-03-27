@@ -8,7 +8,10 @@ const flash = require('connect-flash');
 const mysqlstore = require('express-mysql-session');
 const bodyparser = require('body-parser');
 const fileUpload = require('express-fileupload');
+const multer  = require('multer');
+const upload = multer({dest: 'src/public/uploads'});
 
+ 
 const { database } = require('./keys'); 
 
 const app = express(); 
@@ -26,6 +29,9 @@ app.engine('.hbs', exphbs({
   helpers: require('./lib/handlebars')
 }))
 app.set('view engine', '.hbs');
+
+app.use(express.json());
+app.use(express.urlencoded({extended:false}));
 /// archivos compartidos
 
 
@@ -60,9 +66,13 @@ app.use((req, res, next) => {
 app.use(require('./routes'));
 app.use(require('./routes/authentication'));
 app.use('/links',require('./routes/links'));
+// app.use(require('./routes/images'));
+app.post('/products',upload.single('photo'));
 
 //public
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public/images')));
+
 
 // starting the server
 
