@@ -16,6 +16,16 @@ router.get('/user', (req, res) => {
 });
 
 
+router.get('/users-services', async (req, res) => {
+
+    const users = await pool.query('SELECT *FROM users');
+
+    res.render('Pages/users/users-services/users-services',{ users });
+
+    
+});
+
+
 router.get('/profile', isLoggedIn, (req, res) => {
     res.render('Pages/user-profile/user-profile');
 });
