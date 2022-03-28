@@ -105,8 +105,9 @@ router.post('/image-profile',isLoggedIn, async (req, res) => {
     let uploadPath;
   
     if (!req.files || Object.keys(req.files).length === 0) {
-      return res.status(400).send('No Ingresaste una imagen o foto.');
-    }
+        req.flash('message','No Ingresaste una Foto o Imagen')
+      return res.status(400).redirect('/profile');
+        }
   
     // name of the input is sampleFile
     sampleFile = req.files.sampleFile;
