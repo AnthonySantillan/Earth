@@ -38,7 +38,7 @@ const { isLoggedIn } = require('../lib/auth');
     res.redirect('/signin');
   });
 
-  router.get('/profile', (req, res) => {
+  router.get('/profile',isLoggedIn, (req, res) => {
     // console.log(req.body);
 
     res.render('Pages/user-profile/user-profile');

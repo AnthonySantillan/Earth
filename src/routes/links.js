@@ -11,7 +11,7 @@ const path = require('path');
 
 
 
-router.get('/user', (req, res) => {
+router.get('/user',isLoggedIn, (req, res) => {
     res.render('Pages/users/add');
 });
 
@@ -30,7 +30,7 @@ router.get('/profile', isLoggedIn, (req, res) => {
     res.render('Pages/user-profile/user-profile');
 });
 
-router.post('/user', async (req, res) => {
+router.post('/user', isLoggedIn, async (req, res) => {
     const { name, email, description } = req.body;
     const newUser = {
         name,
@@ -42,7 +42,7 @@ router.post('/user', async (req, res) => {
     res.redirect('/links');
 });
 
-router.get('/', async (req, res) => {
+router.get('/',isLoggedIn, async (req, res) => {
 
     const users = await pool.query('SELECT *FROM users');
 
@@ -50,7 +50,7 @@ router.get('/', async (req, res) => {
     res.render('Pages/users/list', { users });
 });
 
-router.get('/delete/:id', async (req, res) => {
+router.get('/delete/:id', isLoggedIn, async (req, res) => {
     const { id } = req.params;
     await pool.query('DELETE FROM users WHERE ID = ?', [id]);
   
@@ -60,7 +60,7 @@ router.get('/delete/:id', async (req, res) => {
 
 });
 
-router.get('/edit/:id', async (req, res) => {
+router.get('/edit/:id',isLoggedIn, async (req, res) => {
     const { id } = req.params;
     const users = await pool.query('SELECT *FROM users WHERE id = ?', [id]);
     res.render('Pages/users/edit', { user: users[0] })
