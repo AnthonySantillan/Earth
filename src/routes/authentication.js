@@ -33,6 +33,11 @@ const { isLoggedIn } = require('../lib/auth');
     failureFlash: true
   }));
 
+  router.get('/logout', (req, res) => {
+    req.logOut();
+    res.redirect('/signin');
+  });
+
   router.get('/profile', (req, res) => {
     // console.log(req.body);
 
