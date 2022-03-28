@@ -1,8 +1,9 @@
-{{#if user}}
+{{!-- {{#if user}}
 <div class="container p-4 m-4">
     <div class="row">
         <div class="col-md-8 mx-auto">
-            <div class="card text-center border border-primary" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');background-color: #f7f7f7;">
+            <div class="card text-center border border-primary"
+                style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');background-color: #f7f7f7;">
                 <div class="card-body">
 
                     {{#if user.profile_image}}
@@ -26,4 +27,47 @@
 </div>
 {{else}}
 <h1>loguate papu</h1>
+{{/if}} --}}
+<link rel="stylesheet" href="/css/Profile.css">
+{{#if user}}
+<section class="seccion-perfil-usuario">
+    <div class="perfil-usuario-header"  style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');background-color: #f7f7f7;">
+        <div class="perfil-usuario-portada"  style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');background-color: #f7f7f7;">
+            <div class="perfil-usuario-avatar">
+                {{#if user.profile_image}}
+                <img src="/{{user.profile_image}}" loading="lazy" alt="User Profile">
+                {{else}}
+                <img src="/not-found/not-found-image.png" alt="..." alt="User Profile">
+                {{/if}}
+            </div>
+        </div>
+    </div>
+    <div class="m-3">
+        <form action="/links//image-profile" method="POST" encType="multipart/form-data">
+            <input type="file" name="sampleFile" accept="image/*" />
+            <input type="submit" class="btn btn-primary">
+        </form>
+    </div>
+    <div class="perfil-usuario-body">
+        <div class="perfil-usuario-bio" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');background-color: #f7f7f7;">
+            <h3 class="titulo" style="color: rgb(0, 140, 255);">{{user.name}}</h3>
+            <p class="texto">{{user.description}}</p>
+        </div>
+        <div class="perfil-usuario-footer" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');background-color: #f7f7f7;">
+            <ul class="lista-datos">
+                <li><i class="icono fas fa-map-signs"></i> Direccion de usuario: Quitumbe</li>
+                <li><i class="icono fas fa-phone-alt"></i> Telefono: 0984198768</li>
+                <li><i class="icono fas fa-briefcase"></i> Trabaja en: Linkear</li>
+                <li><i class="icono fas fa-building"></i> Cargo: Gestion de proyectos</li>
+            </ul>
+            <ul class="lista-datos" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');background-color: #f7f7f7;">
+                <li><i class="icono fas fa-map-marker-alt"></i> Pais: Ecuador</li>
+                <li><i class="icono fas fa-calendar-alt"></i> Fecha nacimiento: 17/11/2000</li>
+                <li><i class="icono fas fa-user-check"></i> Registro: N°1</li>
+                <li><i class="icono fas fa-share-alt"></i> Redes sociales.</li>
+            </ul>
+        </div>
+    </div>
+</section>
 {{/if}}
+<!--====  End of html  ====-->
