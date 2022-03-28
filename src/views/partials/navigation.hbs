@@ -3,18 +3,18 @@
         <header class="header" id="header">
             {{#if user}}
             <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
-            <div class="header_img">
-                {{#if user.profile_image}}
-                <img src="/{{user.profile_image}}" loading="lazy" alt="User Profile">
-                {{else}}
-                <img src="/not-found/not-found-image.png" alt="..." alt="User Profile">
-                {{/if}}
-            </div>
+
             <div class="dropdown">
 
                 <a class="btn btn-secondary dropdown-toggle text-uppercase" type="button" id="dropdownMenuButton"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {{user.name}}
+                    <div class="header_img">
+                        {{#if user.profile_image}}
+                        <img src="/{{user.profile_image}}" loading="lazy" alt="User Profile">
+                        {{else}}
+                        <img src="/not-found/not-found-image.png" alt="..." alt="User Profile">
+                        {{/if}}
+                    </div> {{user.name}}
                 </a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" href="/links/profile"><i class="fa-solid fa-circle-user"></i> Perfil</a>
