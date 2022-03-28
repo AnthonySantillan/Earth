@@ -53,6 +53,7 @@ router.get('/', async (req, res) => {
 router.get('/delete/:id', async (req, res) => {
     const { id } = req.params;
     await pool.query('DELETE FROM users WHERE ID = ?', [id]);
+  
     req.flash('success', 'Usuario borrado correctamente');
 
     res.redirect('/links');
@@ -104,7 +105,7 @@ router.post('/image-profile',isLoggedIn, async (req, res) => {
     let uploadPath;
   
     if (!req.files || Object.keys(req.files).length === 0) {
-      return res.status(400).send('No files were uploaded.');
+      return res.status(400).send('No Ingresaste una imagen o foto.');
     }
   
     // name of the input is sampleFile
@@ -116,9 +117,8 @@ router.post('/image-profile',isLoggedIn, async (req, res) => {
     // Use mv() to place file on the server
     sampleFile.mv(uploadPath, function (err) {
       if (err) return res.status(500).send(err);
-  
         pool.query('UPDATE users SET profile_image = ? WHERE id = ?', [sampleFile.name, req.user.id]) 
-
+        req.flash('success', 'Foto de perfil actualizado');
         res.redirect('/profile');
    
       });
