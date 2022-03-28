@@ -118,6 +118,13 @@ estilos
     font-size: 1.75em;
     margin-bottom: 0.5rem;
 }
+.seccion-perfil-usuario .perfil-usuario-body .title {
+    display: block;
+    width: 100%;
+    font-size: 1.05em;
+    margin-bottom: 0.5rem;
+}
+
 
 .seccion-perfil-usuario .perfil-usuario-body .texto {
     color: #848484;
