@@ -93,8 +93,8 @@ router.post('/edit/:id', async (req, res) => {
 
 
 router.get('/', isLoggedIn, async (req, res) => {
-  const links = await pool.query('SELECT * FROM users WHERE user_id = ?', [req.user.id]);
-  res.render('links/list', { links });
+  const users = await pool.query('SELECT * FROM users WHERE user_id = ?', [req.user.id]);
+  res.render('links/list', { users });
 });
 
 
