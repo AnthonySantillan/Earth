@@ -1,3 +1,4 @@
+<<<<<<< HEAD
   <form action="/links//image-profile" method="POST" encType="multipart/form-data">
     <h3>Editar foto</h3>
     <input type="file" name="sampleFile" accept="image/*" />
@@ -6,6 +7,14 @@
 
 
 <body>
+=======
+{{#if user}}
+<div class="container p-4 m-4">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card text-center border border-primary" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');background-color: #f7f7f7;">
+                <div class="card-body">
+>>>>>>> ca2687bf263e256643073e7d0c0e3c5b1ee5667c
 
 <style type="text/css">
 
@@ -250,11 +259,22 @@ estilos
                     {{#if user.profile_image}}               
                     <img src="/{{user.profile_image}}" loading="lazy" alt="User Profile">
                     {{else}}
-                    <img src="/not-found-image.png" class="card__image" alt="..." alt="User Profile">
+                    <img src="/not-found/not-found-image.png" class="card__image" alt="..." alt="User Profile">
                     {{/if}}
+<<<<<<< HEAD
                     <button type="button" class="boton-avatar">
                         <i class="far fa-image"></i>
                     </button>
+=======
+                    <form action="/links//image-profile" method="POST" encType="multipart/form-data">
+                        <h5 style="color: rgb(0, 140, 255);" class="m-2 text-uppercase">{{user.name}}</h5>
+                        <p>Email: {{user.email}}</p>
+                        <p>Descripción: {{user.description}}</p>
+                        <h6 class="text-uppercase">Editar Foto:</h6>
+                        <input type="file" name="sampleFile" accept="image/*" />
+                        <input type="submit" class="btn btn-primary">
+                    </form>
+>>>>>>> ca2687bf263e256643073e7d0c0e3c5b1ee5667c
                 </div>
 
 {{!-- SECCION PORTADA --}}
@@ -265,6 +285,7 @@ estilos
             </div>
         </div>
 
+<<<<<<< HEAD
       
 
 {{!-- DATOS --}}
@@ -298,3 +319,10 @@ estilos
     <!--====  End of html  ====-->
 
 </body>
+=======
+    </div>
+</div>
+{{else}}
+<h1>loguate papu</h1>
+{{/if}}
+>>>>>>> ca2687bf263e256643073e7d0c0e3c5b1ee5667c
