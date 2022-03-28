@@ -16,7 +16,7 @@ router.get('/user',isLoggedIn, (req, res) => {
 });
 
 
-router.get('/users-services', async (req, res) => {
+router.get('/users-services',isLoggedIn,  async (req, res) => {
 
     const users = await pool.query('SELECT *FROM users');
 
