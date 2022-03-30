@@ -111,7 +111,7 @@ router.post('/image-profile',isLoggedIn, async (req, res) => {
   
     // name of the input is sampleFile
     sampleFile = req.files.sampleFile;
-    uploadPath = __dirname + '/../public/images/' + sampleFile.name;
+    uploadPath = __dirname + '/../public/images/img-profile/' + sampleFile.name;
   
     console.log(sampleFile);
   
