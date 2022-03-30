@@ -1,29 +1,3 @@
-html {
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    text-size-adjust: 100%;
-    line-height: 1.4;
-}
-
-
-* {
-    margin: 0;
-    padding: 0;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-body {
-    color: #404040;
-    font-family: "Arial", Segoe UI, Tahoma, sans-serifl, Helvetica Neue, Helvetica;
-}
-
-
-/*=====================================
-estilos
-=====================================*/
-
 .seccion-perfil-usuario .perfil-usuario-body,
 .seccion-perfil-usuario {
     display: flex;
@@ -36,7 +10,7 @@ estilos
     width: 100%;
     display: flex;
     justify-content: center;
-    background: linear-gradient(#62af5b, transparent);
+    background: linear-gradient(#000000, transparent);
     margin-bottom: 1.25rem;
 }
 
@@ -45,10 +19,10 @@ estilos
     position: relative;
     width: 90%;
     height: 17rem;
-    background-image: linear-gradient(45deg, #62af5b, #317FFF);
+    background-image: linear-gradient(45deg, #000000, #317FFF);
     border-radius: 0 0 20px 20px;
+    
 
-    background-image: url('Images/portada.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -63,7 +37,7 @@ estilos
     border-radius: 8px;
     padding: 12px 25px;
     background-color: rgba(0, 0, 0, .5);
-    color: #fff;
+    color: rgb(255, 255, 255);
     cursor: pointer;
 }
 
@@ -118,13 +92,6 @@ estilos
     font-size: 1.75em;
     margin-bottom: 0.5rem;
 }
-.seccion-perfil-usuario .perfil-usuario-body .title {
-    display: block;
-    width: 100%;
-    font-size: 1.05em;
-    margin-bottom: 0.5rem;
-}
-
 
 .seccion-perfil-usuario .perfil-usuario-body .texto {
     color: #848484;
@@ -198,10 +165,10 @@ estilos
 }
 
 .seccion-perfil-usuario .boton-redes.instagram {
-    background: linear-gradient(45deg, #FF2DFD, #40A7FF);
+    background: linear-gradient(45deg, #000000, #40A7FF);
 }
 
-/* adactacion a dispositivos */
+/* adaptacion a dispositivos */
 @media (max-width: 750px) {
     .seccion-perfil-usuario .lista-datos {
         width: 100%;
@@ -228,4 +195,96 @@ estilos
         margin-left: 1rem;
         margin-top: 0;
     }
+}
+
+.drag-area {
+ border: 5px dashed #ddd;
+
+ border-radius: 5px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-direction: column;
+}
+
+.drag-area.active {
+ background-color: #b8d4fe;
+ color: black;
+ border: 2px dashed #618ac9;
+}
+.drag-area h2 {
+ font-size: 30px;
+ font-weight: 500;
+ color: #000;
+}
+.drag-area input {
+ padding: 10px 25px;
+ font-size: 20px;
+ border: 0;
+ outline: none;
+ background-color: #5256ad;
+ color: white;
+ border-radius: 5px;
+ cursor: pointer;
+ margin: 20px;
+}
+.modal{
+     position: fixed;
+     top: 0;
+     bottom: 0;
+      left: 0;
+      right: 0;
+     background-color: O#333;
+     display: flex;
+     --opacity: 0;
+     --pointer: none;
+     opacity: var(--opacity);
+     pointer-events: var(--pointer);
+     transition: opacity .5s;
+}
+.modal:target{
+   --opacity: 1;
+   --pointer: unset;
+}
+.modal_container{
+   margin: auto;
+   background-color: #fff;
+   width: 90%;
+   max-width: 600px;
+   max-height: 90%;
+   overflow: hidden;
+   text-align: center;
+   padding: 2.5em 1.5em;
+   border-radius: 1em;
+}
+
+.modal:target .modal_container{
+   animation: show 1s .5s backwards;
+}
+@keyframes show {
+   0%{
+     transform: translateY(-150vh);
+   }
+}
+
+.modal_title{
+   font-size: 2.5rem;
+   font-weight: 500;
+}
+.modal_title--bold{
+   font-weight: 700;
+}
+.modal_close{
+   display: inline-block;
+   border: 1px solid;
+   padding: 1em 2em;
+   text-decoration: none;
+   font-weight: 700;
+   color: #333;
+   border-radius: .4em;
+}
+@media (max-width:600px) {
+   .modal_title{
+       font-size: 1.7rem;
+}
 }
