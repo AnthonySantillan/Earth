@@ -1,22 +1,19 @@
-const users =(sequelize, type) =>{
-    return sequelize.define('users', {
+const roles =(sequelize, type) =>{
+    return sequelize.define('roles', {
         id: {
             type: type.INTEGER,
             primaryKey: true,
             autoIncrement: true,
         },
         name: type.STRING(99),
-        password: type.STRING,
-        email: type.STRING, 
-        profile_image: type.STRING,
-        description: type.STRING, 
+        state: type.BOOLEAN,
 
-        createnUsers:{
+        createRoles:{
             type: 'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP'),
             allowNull: false
         },
-        updateUsers:{
+        updateRoles:{
             type: 'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP '),
             allowNull: false
@@ -26,4 +23,4 @@ const users =(sequelize, type) =>{
     })
 }
 
-module.exports = users
+module.exports = roles

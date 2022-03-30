@@ -14,8 +14,15 @@ mysql.createConnection({
     })
 })
 
-const userModel = require('../models/user.model');
+const usersModel = require('../models/users.model');
 
+const rolesModel = require('../models/roles.model');
+
+const servicesModel = require ('../models/services.model');
+
+const notificationsModel = require ('../models/notifications.model');
+
+const messagesModel = require('../models/messages.model');
 
 const sequelize = new Sequelize(
   'ArquitectosEarth',
@@ -46,12 +53,27 @@ sequelize.sync({ force: false })
     console.log("synchronized tables")
   })
 
-const user = userModel(sequelize, Sequelize);
+const users = usersModel(sequelize, Sequelize);
 
+const roles = rolesModel(sequelize, Sequelize);
+
+const notifications = notificationsModel(sequelize, Sequelize);
+
+const messages = messagesModel(sequelize, Sequelize);
+
+const services = servicesModel(sequelize, Sequelize);
 
 //Relaciones 
+roles.hasMany(users)
+users.belongsTo(roles)
+
+roles.hasMany(services)
+services.belongsTo(roles)
 
 module.exports = {
-  user
-
+  users,
+  roles,
+  notifications,
+  messages,
+  services,
 }
