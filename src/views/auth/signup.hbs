@@ -31,13 +31,25 @@
       <div class="left">
         <h1 class="titulo">Bienvenido de vuelta</h1>
         <p class="parrafo">Si ya tiene un cuenta de click aqui</p>
-        <button>Sing in</button>
+        <a href="/signin" class="btn btn-primary">Sign in</a>
       </div>
       <div class="right">
         <h1 class="titulo2">Crear Cuenta</h1>
-        <input type="text" placeholder="Full Name"><br>
-        <input type="text" placeholder="Email"><br>
-        <input type="text" placeholder="Password"><br>
-        <button>Sing up</button>
+        <form action="/signup" method="POST">
+            <div class="form-group m-3">
+              <input type="type" name="name" placeholder="Nombre" class="form-control" autofocus>
+            </div>
+            <div class="form-group m-3">
+              <input type="text" name="email" placeholder="Email" class="form-control">
+            </div>
+            <div class="form-group m-3">
+              <input type="password" name="password" placeholder="Password" class="form-control">
+            </div>
+            <div class="form-group m-3">
+              <button class="btn btn-primary btn-block">
+                SingIn
+              </button>
+            </div>
+          </form>
       </div>
     </div>

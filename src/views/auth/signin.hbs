@@ -92,13 +92,22 @@
   <div class="contenedor-login">
       <div class="right-login">
         <h1 class="titulo2">Login</h1>
-        <input type="text" class="text" placeholder="Email"><br>
-        <input type="text" class="text" placeholder="Password"><br>
-        <button class="button-login" >Sing in</button>    
+         <form action="/signin" method="POST">
+            <div class="form-group m-2 text">
+              <input type="text" name="email" placeholder="email" class="form-control"  autofocus>
+            </div>
+            <div class="form-group m-2 text">
+              <input type="password" name="password" placeholder="Password" class="form-control">
+            </div>
+            <button class="btn btn-primary btn-block m-2">
+              SingIn
+            </button>
+          </form>
       </div>
       <div class="left-login">
         <h1 class="titulo">Bienvenido</h1>
         <p class="parrafo">Aun no tienes una cuenta</p>
-        <button class="button-login" >Sing up</button>
+        <a class="button-login" href="/signup" >Sing up</a>
       </div>
+      
     </div>
