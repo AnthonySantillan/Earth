@@ -3,15 +3,15 @@ const router = express.Router();
 const passport = require('passport');
 
 const pool = require('../config/database');
-const { isLoggedIn } = require('../lib/auth');
+const { isLoggedIn, isNotLoggedIn } = require('../lib/auth');
 
 
 
-  router.get('/signin', (req, res) => {
+  router.get('/signin', isNotLoggedIn, (req, res) => {
     res.render('auth/signin');
   });
 
-  router.post('/signin', (req, res, next) => {
+  router.post('/signin',isNotLoggedIn, (req, res, next) => {
  
     passport.authenticate('local.signin', {
       successRedirect: '/',
@@ -23,7 +23,7 @@ const { isLoggedIn } = require('../lib/auth');
   });
 
 
-  router.get('/signup', (req, res) => {
+  router.get('/signup',isNotLoggedIn, (req, res) => {
     res.render('auth/signup');
   });
   
@@ -33,7 +33,7 @@ const { isLoggedIn } = require('../lib/auth');
     failureFlash: true
   }));
 
-  router.get('/logout', (req, res) => {
+  router.get('/logout', isNotLoggedIn,(req, res) => {
     req.logOut();
     res.redirect('/signin');
   });
