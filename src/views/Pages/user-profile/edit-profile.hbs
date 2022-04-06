@@ -35,7 +35,7 @@
                     <div class="row">
                         <div class="mb-3 col-6">
                             <label for="exampleInputPassword1" class="form-label">Cedula/Pasaporte</label>
-                            <input type="number" value="{{user.dni}}" class="form-control" required>
+                            <input type="number" value="{{user.dni}}" name="dni" class="form-control" required>
                         </div>
                         <div class="mb-3 col-6">
                             <label for="exampleInputPassword1" class="form-label">Número de Celular</label>
@@ -49,7 +49,7 @@
                         <textarea name="description" rows="2" class="form-control" required
                             placeholder="Description">{{user.description}}</textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
                 </form>
             </div>
         </div>

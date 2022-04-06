@@ -127,14 +127,15 @@ router.post('/image-profile',isLoggedIn, async (req, res) => {
 
 
   router.post('/edit-profile',isLoggedIn, async (req, res) => {
-    const { name, email, description, address, phone ,country, profession } = req.body;
+    const { name, email, description, address, phone ,country, profession, dni } = req.body;
     const newUser = {
         name,
         description,
         address,
         phone,
         country,
-        profession
+        profession,
+        dni
        };
 
     // Use mv() to place file on the server
