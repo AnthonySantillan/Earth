@@ -1,0 +1,27 @@
+<div class="card  mx-auto" style="width: 50rem;">
+    <div>
+        <h5
+            style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');background-color: #f7f7f7;">
+            Información Personal</h5>
+    </div>
+    <div class="m-2">
+        <form>
+            <div class="row">
+                <div class="row panel-content col-6">
+                    <div class="columns content-div">
+                     <label for="exampleInputPassword1" class="form-label">Email</label>
+
+                            <input class="form-control input-form-gray" disabled="" type="text" id="inputEmail"
+                                placeholder="Email" name="plEmail" value="{{user.email}}">
+                            <div class="form-error-message plEmail"></div>
+                    </div>
+                </div>
+                <div class="mb-3 col-6">
+                    <label for="exampleInputPassword1" class="form-label">Cedula</label>
+                    <input type="number" class="form-control" id="exampleInputPassword1">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>

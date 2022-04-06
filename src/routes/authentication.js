@@ -33,7 +33,7 @@ const { isLoggedIn, isNotLoggedIn } = require('../lib/auth');
     failureFlash: true
   }));
 
-  router.get('/logout', isNotLoggedIn,(req, res) => {
+  router.get('/logout',(req, res) => {
     req.logOut();
     res.redirect('/signin');
   });
@@ -42,6 +42,11 @@ const { isLoggedIn, isNotLoggedIn } = require('../lib/auth');
     // console.log(req.body);
 
     res.render('Pages/user-profile/user-profile');
+  });
+  router.get('/edit-profile',isLoggedIn, (req, res) => {
+    // console.log(req.body);
+
+    res.render('Pages/user-profile/edit-profile');
   });
 
 module.exports = router;
