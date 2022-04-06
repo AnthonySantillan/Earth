@@ -1,34 +1,46 @@
-<div class="card  mx-auto" style="width: 50rem; background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');background-color: #f7f7f7;">
-    <div>
-        <h5
+<div class="container p-4">
+    <div class="col-md-12" style="margin-bottom: 5px;">
+        <div class="card text-center"
             style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');background-color: #f7f7f7;">
-            Información Personal</h5>
-    </div>
-    <div class="m-2">
-        <form>
-            <div class="row">
-                <div class="row panel-content col-6">
-                    <div class="columns content-div">
-                     <label for="exampleInputPassword1" class="form-label">Email</label>
+            <h3 class="card-title text-uppercase" style="color: rgb(44, 142, 253);">
+                Perfil
+            </h3>
+        </div>
 
-                            <input class="form-control input-form-gray" disabled="" type="text" id="inputEmail"
-                                placeholder="Email" name="plEmail" value="{{user.email}}">
-                            <div class="form-error-message plEmail"></div>
-                    </div>
-                </div>
-                <div class="mb-3 col-6">
-                    <label for="exampleInputPassword1" class="form-label">Nombre</label>
-                    <input type="text" value="{{user.name}}" class="form-control" id="exampleInputPassword1">
-                </div>
-            </div class="row">
-              <div class="mb-3 col-6">
-                    <label for="exampleInputPassword1" class="form-label">Cedula</label>
-                    <input type="number" value="{{user.dni}}" class="form-control" id="exampleInputPassword1">
-                </div>
+
+        <div class="card  mx-auto m-2"
+            style="width: 50rem; background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');background-color: #f7f7f7;">
             <div>
-
+                <h5
+                    style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');background-color: #f7f7f7;">
+                    Información Personal</h5>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+            <div class="m-2">
+                <form>
+                    <div class="row">
+                        <div class="row panel-content col-6">
+                            <div class="columns content-div">
+                                <label for="exampleInputPassword1" class="form-label">Email</label>
+
+                                <input class="form-control input-form-gray" disabled="" type="text" id="inputEmail"
+                                    placeholder="Email" name="plEmail" value="{{user.email}}">
+                                <div class="form-error-message plEmail"></div>
+                            </div>
+                        </div>
+                        <div class="mb-3 col-6">
+                            <label for="exampleInputPassword1" class="form-label">Nombre</label>
+                            <input type="text" value="{{user.name}}" class="form-control" id="exampleInputPassword1">
+                        </div>
+                    </div class="row">
+                    <div class="mb-3 col-6">
+                        <label for="exampleInputPassword1" class="form-label">Cedula</label>
+                        <input type="number" value="{{user.dni}}" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div>
+
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
     </div>
-</div>
