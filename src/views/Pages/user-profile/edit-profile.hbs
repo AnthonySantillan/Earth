@@ -1,4 +1,4 @@
-<div class="card  mx-auto" style="width: 50rem;">
+<div class="card  mx-auto" style="width: 50rem; background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');background-color: #f7f7f7;">
     <div>
         <h5
             style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');background-color: #f7f7f7;">
@@ -17,9 +17,16 @@
                     </div>
                 </div>
                 <div class="mb-3 col-6">
-                    <label for="exampleInputPassword1" class="form-label">Cedula</label>
-                    <input type="number" class="form-control" id="exampleInputPassword1">
+                    <label for="exampleInputPassword1" class="form-label">Nombre</label>
+                    <input type="text" value="{{user.name}}" class="form-control" id="exampleInputPassword1">
                 </div>
+            </div class="row">
+              <div class="mb-3 col-6">
+                    <label for="exampleInputPassword1" class="form-label">Cedula</label>
+                    <input type="number" value="{{user.dni}}" class="form-control" id="exampleInputPassword1">
+                </div>
+            <div>
+
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
