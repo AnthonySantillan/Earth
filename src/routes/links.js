@@ -11,18 +11,18 @@ const path = require('path');
 
 
 
-router.get('/user',isLoggedIn, (req, res) => {
+router.get('/user', isLoggedIn, (req, res) => {
     res.render('Pages/users/add');
 });
 
 
-router.get('/users-services',isLoggedIn,  async (req, res) => {
+router.get('/users-services', isLoggedIn, async (req, res) => {
 
     const users = await pool.query('SELECT *FROM users');
 
-    res.render('Pages/users/users-services/users-services',{ users });
+    res.render('Pages/users/users-services/users-services', { users });
 
-    
+
 });
 
 
@@ -42,7 +42,7 @@ router.post('/user', isLoggedIn, async (req, res) => {
     res.redirect('/links');
 });
 
-router.get('/',isLoggedIn, async (req, res) => {
+router.get('/', isLoggedIn, async (req, res) => {
 
     const users = await pool.query('SELECT *FROM users');
 
@@ -53,14 +53,14 @@ router.get('/',isLoggedIn, async (req, res) => {
 router.get('/delete/:id', isLoggedIn, async (req, res) => {
     const { id } = req.params;
     await pool.query('DELETE FROM users WHERE ID = ?', [id]);
-  
+
     req.flash('success', 'Usuario borrado correctamente');
 
     res.redirect('/links');
 
 });
 
-router.get('/edit/:id',isLoggedIn, async (req, res) => {
+router.get('/edit/:id', isLoggedIn, async (req, res) => {
     const { id } = req.params;
     const users = await pool.query('SELECT *FROM users WHERE id = ?', [id]);
     res.render('Pages/users/edit', { user: users[0] })
@@ -69,11 +69,13 @@ router.get('/edit/:id',isLoggedIn, async (req, res) => {
 
 router.post('/edit/:id', async (req, res) => {
     const { id } = req.params;
-    const { name, email, description } = req.body;
+    const { name, email, description, roleId } = req.body;
     const newUser = {
         name,
         email,
-        description    };
+        description,
+        roleId
+    };
 
     // Use mv() to place file on the server
 
@@ -94,40 +96,40 @@ router.post('/edit/:id', async (req, res) => {
 
 
 router.get('/', isLoggedIn, async (req, res) => {
-  const users = await pool.query('SELECT * FROM users WHERE user_id = ?', [req.user.id]);
-  res.render('links/list', { users });
+    const users = await pool.query('SELECT * FROM users WHERE user_id = ?', [req.user.id]);
+    res.render('links/list', { users });
 });
 
 
 
-router.post('/image-profile',isLoggedIn, async (req, res) => {
+router.post('/image-profile', isLoggedIn, async (req, res) => {
     let sampleFile;
     let uploadPath;
-  
+
     if (!req.files || Object.keys(req.files).length === 0) {
-        req.flash('message','No Ingresaste una Foto o Imagen')
-      return res.status(400).redirect('/profile');
-        }
-  
+        req.flash('message', 'No Ingresaste una Foto o Imagen')
+        return res.status(400).redirect('/profile');
+    }
+
     // name of the input is sampleFile
     sampleFile = req.files.sampleFile;
     uploadPath = __dirname + '/../public/images/img-profile/' + sampleFile.name;
-  
+
     console.log(sampleFile);
-  
+
     // Use mv() to place file on the server
     sampleFile.mv(uploadPath, function (err) {
-      if (err) return res.status(500).send(err);
-        pool.query('UPDATE users SET profile_image = ? WHERE id = ?', [sampleFile.name, req.user.id]) 
+        if (err) return res.status(500).send(err);
+        pool.query('UPDATE users SET profile_image = ? WHERE id = ?', [sampleFile.name, req.user.id])
         req.flash('success', 'Foto de perfil actualizado');
         res.redirect('/profile');
-   
-      });
-  });
+
+    });
+});
 
 
-  router.post('/edit-profile',isLoggedIn, async (req, res) => {
-    const { name, email, description, address, phone ,country, profession, dni } = req.body;
+router.post('/edit-profile', isLoggedIn, async (req, res) => {
+    const { name, email, description, address, phone, country, profession, dni } = req.body;
     const newUser = {
         name,
         description,
@@ -136,7 +138,7 @@ router.post('/image-profile',isLoggedIn, async (req, res) => {
         country,
         profession,
         dni
-       };
+    };
 
     // Use mv() to place file on the server
 
