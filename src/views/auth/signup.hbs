@@ -27,6 +27,7 @@
     </div>
   </div>
 </div> --}}
+ <link rel="stylesheet" href="css/register.css" />
 <div class="contenedor">
       <div class="left">
         <h1 class="titulo">Bienvenido de vuelta</h1>
@@ -37,13 +38,13 @@
         <h1 class="titulo2">Crear Cuenta</h1>
         <form action="/signup" method="POST">
             <div class="form-group m-3">
-              <input type="type" name="name" placeholder="Nombre" class="form-control" autofocus>
+              <input type="type" name="name" placeholder="Nombre" class="form-control" required autofocus>
             </div>
             <div class="form-group m-3">
-              <input type="text" name="email" placeholder="Email" class="form-control">
+              <input type="text" name="email" placeholder="Email" class="form-control" required>
             </div>
             <div class="form-group m-3">
-              <input type="password" name="password" placeholder="Password" class="form-control">
+              <input type="password" name="password" placeholder="Password" class="form-control" required>
             </div>
             <div class="form-group m-3">
               <button class="btn btn-primary btn-block">

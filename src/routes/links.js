@@ -126,6 +126,30 @@ router.post('/image-profile',isLoggedIn, async (req, res) => {
   });
 
 
+  router.post('/edit-profile',isLoggedIn, async (req, res) => {
+    const { name, email, description, address, phone ,country, profession, dni } = req.body;
+    const newUser = {
+        name,
+        description,
+        address,
+        phone,
+        country,
+        profession,
+        dni
+       };
+
+    // Use mv() to place file on the server
+
+    await pool.query('UPDATE users set ? WHERE id = ?', [newUser, req.user.id]);
+    req.flash('success', 'Usuario actualizado correctamente');
+    req.flash('success', 'Información de perfil actualizado');
+
+    res.redirect('/profile');
+
+
+
+});
+
 
 // res.send('File uploaded!');
 module.exports = router;
