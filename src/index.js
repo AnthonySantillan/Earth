@@ -8,13 +8,28 @@ const flash = require('connect-flash');
 const mysqlstore = require('express-mysql-session');
 const bodyparser = require('body-parser');
 const fileUpload = require('express-fileupload');
+const http = require('http');
+
 
  
 const { database } = require('./keys'); 
 
 const app = express(); 
 require('./lib/passport');
+const server = http.createServer(app);
 
+const  {Server}  = require('socket.io');
+const io =  new Server(server);
+
+io.on('connection', (socket) => {
+    // console.log('chats');
+    // socket.on('chat', (msg)=>{
+    //     console.log('mensaje:'+msg)
+    // })
+    socket.on('chat', (msg)=>{
+        io.emit('chat', msg)
+    })
+})
 //settings
 app.set('port', process.env.PORT || 3000);
 
@@ -74,6 +89,6 @@ app.use(express.static(path.join(__dirname, 'public/images/img-profile')));
 
 // starting the server
 
-app.listen(app.get('port'),() =>{
+server.listen(app.get('port'),() =>{
     console.log('server on port', app.get('port'));
 });
