@@ -28,7 +28,7 @@
                             </div>
                         </div>
                         <div class="mb-3 col-6">
-                            <label for="exampleInputPassword1" class="form-label">Nombre</label>
+                            <label for="exampleInputPassword1" class="form-label">Nombres Completos</label>
                             <input type="text" value="{{user.name}}" name="name" class="form-control">
                         </div>
                     </div>
@@ -43,9 +43,34 @@
                         </div>
 
                     </div>
+                    <div class="row">
+
+                        <div class="mb-3 col-6">
+                            <label for="exampleInputPassword1" class="form-label">País</label>
+                            <select id="country" name="country" class="btn btn-secondary col-12" required>
+                                <option style="Display: none">{{user.country}}</option>
+                                <option value="Ecuador">Ecuador</option>
+                                <option value="Chile">Chile</option>
+                                <option value="Mexico">Mexico</option>
+                            </select>
+                            {{!-- <input type="text" value="{{user.country}}" name="country" class="form-control"
+                                required> --}}
+                        </div>
+                        <div class="mb-3 col-6">
+                            <label for="exampleInputPassword1" class="form-label">Profesión</label>
+                            <input type="text" value="{{user.profession}}" name="profession" class="form-control"
+                                required>
+                        </div>
+
+                    </div>
+                    <div class="mb-3 col-12">
+                        <label for="exampleInputPassword1" class="form-label">Dirección</label>
+                        <textarea name="address" rows="2" class="form-control" required
+                            placeholder="Dirección">{{user.address}}</textarea>
+                    </div>
 
                     <div class="mb-3 col-12">
-                        <label for="exampleInputPassword1" class="form-label">Descripcion</label>
+                        <label for="exampleInputPassword1" class="form-label">Descripción</label>
                         <textarea name="description" rows="2" class="form-control" required
                             placeholder="Description">{{user.description}}</textarea>
                     </div>

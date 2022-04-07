@@ -42,13 +42,13 @@
             <div class="perfil-usuario-footer">
                 <ul class="lista-datos">
                     <a href="/edit-profile"><i class="fa-solid fa-pencil"></i> Editar perfil</a>
-                    <li><i class="icono fas fa-map-signs"></i> Direccion de usuario: Quitumbe</li>
+                    <li><i class="icono fas fa-map-signs"></i> Direccion de usuario: {{user.address}}</li>
                     <li><i class="icono fas fa-phone-alt"></i> Telefono: {{user.phone}}</li>
                     <li><i class="icono fas fa-briefcase"></i> Correo: {{user.email}}</li>
-                    <li><i class="icono fas fa-building"></i> Cargo: Gestion de proyectos</li>
+                    <li><i class="icono fas fa-building"></i> Profesión: {{user.profession}}</li>
                 </ul>
                 <ul class="lista-datos">
-                    <li><i class="icono fas fa-map-marker-alt"></i> Pais: Ecuador</li>
+                    <li><i class="icono fas fa-map-marker-alt"></i> Pais: {{user.country}}</li>
                     <li><i class="icono fas fa-calendar-alt"></i> Fecha nacimiento: 17/11/2000</li>
                     <li><i class="icono fas fa-user-check"></i> Registro: N°{{user.id}}</li>
                     <li><i class="fa-solid fa-id-card"></i> Cedula/Pasaporte: {{user.dni}}</li>
