@@ -152,6 +152,10 @@ router.post('/edit-profile', isLoggedIn, async (req, res) => {
 
 });
 
+router.get('/messagues',isLoggedIn, (req, res) => {
+    res.render('Pages/users/users-services/users-messagues');
+});
+
 
 // res.send('File uploaded!');
 module.exports = router;
