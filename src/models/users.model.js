@@ -5,7 +5,6 @@ const users =(sequelize, type) =>{
             primaryKey: true,
             autoIncrement: true,
         },
-        dni: type.STRING,
         name: type.STRING(99),
         password: type.STRING,
         email: type.STRING, 
