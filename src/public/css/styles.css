@@ -24,9 +24,8 @@ font-family: 'Oswald', sans-serif;
   overflow: hidden;
   -o-object-fit: cover;
      object-fit: cover;
-  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0), 0 6px 36px rgba(0, 0, 0, 0.13);
-          box-shadow: 0 10px 20px rgba(0, 0, 0, 0), 0 6px 36px rgba(0, 0, 0, 0.13);
-  border: 3px solid #fff;
+          box-shadow: 0 10px 20px #3180ff4d, 0 6px 36px #3180ff47;
+  border: 3px solid #317FFF;
 }
 
 .nav-link {
