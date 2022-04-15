@@ -1,4 +1,100 @@
-    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+<style>
+    form{
+        background: rgba(0, 0, 0, .15);
+        padding: 0.25rem;
+        position: fixed;
+        left: 5%;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        height: 3rem;
+        box-sizing: border-box;
+        backdrop-filter: blur(10px);
+    }
+    .chat{
+        border-color: black;
+        margin: 8px;
+        background-color: rgba(188, 189, 192, 0.671);
+        height: 500px;
+        border-radius: 5px;
+    }
+    ul{
+        list-style: none;
+        margin: 5px;
+        padding: 0;
+     
+    }
+    ul > li{
+        padding: 0.5rem 1rem;
+        border-radius: 10px;
+    }
+    ul > li:nth-child(odd){
+        background: #638add;
+        text-align: right;
+        font-style: italic;
+        font-weight: 600;
+        border: 1px solid rgb(245, 245, 248);
+    }
+    ul > li:nth-child(even){
+        padding: 0.5rem 1rem;
+        margin-top: 5px;
+        border-radius: 10px;
+        background: #ebebec;
+        text-align: left;
+        font-style: italic;
+        font-weight: 600;
+        border: 1px solid rgb(5, 5, 250);
+    }
+    input{
+       margin-right: 20px;
+    }
+    .usuario-seleccionado .avatar {
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: 1rem;
+    position: relative;
+    background-color: #E4E8F0;
+    border-radius: 50%;
+}
+.usuario-seleccionado .cuerpo span:nth-child(2) {
+    font-size: .8em;
+    color: #929292;
+}
+.usuario-seleccionado .cuerpo {
+    flex-grow: 1;
+    flex-basis: 0;
+}
+.usuario-seleccionado .cuerpo span {
+    display: block;
+}
+.usuario-seleccionado {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid #E7E7E7;
+    padding-bottom: 15px;
+}
+</style>
+<div class="chat">
+    <div class="usuario-seleccionado">
+            <div class="avatar">
+                <img src="ruta_img" alt="img">
+            </div>
+            <div class="cuerpo">
+                <span>Jose Delgado</span>
+                <span>Activo</span>
+            </div>
+        </div>
+    <ul class="list-group"></ul>
+    <form action="">
+        <input type="text" class="form-control" placeholder="ingrese el mensaje">
+        <button type="submit" class="btn-primary">Enviar</button>
+    </form>
+   
+</div>
+ <script src="http://localhost:3000/socket.io/socket.io.js"></script>
     <script>
         let socket = io();
         const form = document.querySelector('form');
@@ -19,6 +115,7 @@
         })
 
 
+<<<<<<< HEAD
     </script>
 
 <!--==========================
@@ -528,3 +625,6 @@ body {
     }
 }
 </style>
+=======
+    </script>
+>>>>>>> ea615fac1ad32b882d91f3d71b075b6d3b7d93a9
