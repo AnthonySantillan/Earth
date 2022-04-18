@@ -3,6 +3,7 @@
     <div class="col-md-12" style="margin-bottom: 5px; ">
         <div class="card text-center border border-primary">
             <h3 class="card-title text-uppercase" style="color: rgb(44, 142, 253);">
+                Cursos
             </h3>
         </div>
     </div>
@@ -10,19 +11,19 @@
         <div class="col-md-3 ">
             <div class="card border border-primary">
                 <div class="card-body">
-                    <img src="" class="card__image" alt="..." alt="User Profile">
+                    <video poster="/images/logo.jpeg" autoplay loop controls class="card-img-top" tabindex="0" style="height: 200px;">
+                        <source src="/videos/videos-courses/not-found/not-found.mp4"/>
+                    </video>
                     <p class="card-title text-uppercase text-center m-1" style="color: rgb(44, 142, 253); ">
                     </p>
-                    <p class="m-2">Role: </p>
+                    <p class="m-2"> </p>
 
                     <p class="m-2">
-                        Email: 
                     </p>
                     <p class="m-2">
-                        Descripción: 
                     </p>
                     <p class="m-2 text-center">
-                      
+
                     </p>
                     <a class="btn btn-danger" href="">
                         <i class="fa-solid fa-trash-can"></i>
@@ -35,16 +36,8 @@
                 </div>
             </div>
         </div>
-        {{else}}
-        <div class="col-md-4 mx-auto">
-            <div class="card card-body text-center">
-                <p>There are not Users saved yet.</p>
-                <a href="">Create One!</a>
-            </div>
-        </div>
-        {{/each}}
+
     </div>
-</div>
-{{else}}
-<h1>logueate papu</h1>
-{{/if}}
+    {{else}}
+    <h1>logueate papu</h1>
+    {{/if}}

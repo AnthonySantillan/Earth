@@ -79,6 +79,8 @@ app.use((req, res, next) => {
 //routes
 app.use(require('./routes'));
 app.use(require('./routes/authentication'));
+app.use(require('./routes/course.route'));
+
 app.use('/links',require('./routes/links'));
 
 
