@@ -22,6 +22,7 @@ passport.use('local.signin', new LocalStrategy({
   }else{
     return done(null, false, req.flash('message', 'no tienes rol comunicate con el administrador'));
   }
+
   if (rows.length > 0) {
     const user = rows[0];
     const validPassword = await helpers.matchPassword(password, user.password);
@@ -31,10 +32,6 @@ passport.use('local.signin', new LocalStrategy({
     } else {
       done(null, false, req.flash('message', 'Contraseña Incorecta'));
     }
-
-
-
-
   } else {
     return done(null, false, req.flash('message', 'El email no existe'));
   }

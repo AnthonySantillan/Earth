@@ -73,7 +73,7 @@ router.get('/signup', isNotLoggedIn, (req, res) => {
 
 router.post('/signup', passport.authenticate('local.signup', {
   successRedirect: '/',
-  failureRedirect: '/signup',
+  failureRedirect: '/signin',
   failureFlash: true
 }));
 
