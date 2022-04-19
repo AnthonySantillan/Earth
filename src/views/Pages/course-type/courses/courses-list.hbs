@@ -1,43 +1,145 @@
 {{#if user}}
-<div class="container p-4">
-    <div class="col-md-12" style="margin-bottom: 5px; ">
-        <div class="card text-center border border-primary">
-            <h3 class="card-title text-uppercase" style="color: rgb(44, 142, 253);">
-                Cursos
+<div class="container p-2">
+    <div class="card text-center border border-primary">
+
+        <h3 class="card-title text-uppercase" style="color: rgb(44, 142, 253);">
+               Cursos
             </h3>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-3 ">
-            <div class="card border border-primary">
-                <div class="card-body">
-                    <video poster="/images/logo.jpeg" autoplay loop controls class="card-img-top" tabindex="0" style="height: 200px;">
-                        <source src="/videos/videos-courses/not-found/not-found.mp4"/>
-                    </video>
-                    <p class="card-title text-uppercase text-center m-1" style="color: rgb(44, 142, 253); ">
-                    </p>
-                    <p class="m-2"> </p>
-
-                    <p class="m-2">
-                    </p>
-                    <p class="m-2">
-                    </p>
-                    <p class="m-2 text-center">
-
-                    </p>
-                    <a class="btn btn-danger" href="">
-                        <i class="fa-solid fa-trash-can"></i>
-                        Delete
-                    </a>
-                    <a class="btn btn-secondary" href="">
-                        <i class="fa-solid fa-pen-to-square"></i>
-                        Edit
-                    </a>
+        <div class="left">
+       <div class="row courses">
+           <h1 class="title">Populares</h1>
+            <div class="col-5">
+            <div class="course"></div>
+                <h3 class="sub">AutoCad
+                     <i class="fa-solid fa-angle-right"></i>
+                </h3>
+            </div>
+            <div class="col-5">
+            <div class="course"></div>
+                <h3 class="sub">AutoCad
+                     <i class="fa-solid fa-angle-right"></i>
+                </h3>
+            </div>
+             <h1 class="title-2">Profesores Populares</h1>
+             <div class="tutors">
+                 <div class="user">
+                     <div class="left">
+                     <img src="/not-found/not-found-image.png">
+                     </div>
+                     <div class="right">
+                     <h3 class="name">nombre del profesor</h3>
+                     </div>
+                 </div>
+             </div>
+              <div class="tutors">
+                 <div class="user">
+                     <div class="left">
+                     <img src="/not-found/not-found-image.png">
+                     </div>
+                     <div class="right">
+                     <h3 class="name">nombre del profesor</h3>
+                     </div>
+                 </div>
+             </div>
+            </div>
+            
+        </div>
+            <div class="right">
+                <h1 class="title">Busqueda</h1>
+                <h3 class="sub-1">Mas de 100 cursos disponibles
+                     <i class="fa-solid fa-ellipsis"></i>
+                </h3>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="button-addon2">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Buscar</button>
+                </div>
+                <h3 class="sub-1">1000+ personas estudiando ahora!
+                     <i class="fa-solid fa-ellipsis"></i>
+                </h3>
+                <div class="person">
+                   {{!-- <img src="/not-found/not-found-image.png"> --}}
+                </div>
+                 <h3 class="sub-1">Ofertas Especiales
+                     <i class="fa-solid fa-ellipsis"></i>
+                </h3>
+                <div class="person">
+                   {{!-- <img src="/not-found/not-found-image.png"> --}}
                 </div>
             </div>
-        </div>
-
-    </div>
+    <style>
+        .course{
+            background-color: #1259f0;;
+            width: 200px;
+            height: 250px;
+            border-radius: 10px;
+            margin: 10px;
+            display: flex;
+        }
+        .title{
+            color: rgb(59, 57, 57);
+            font-size: 15px;
+        }
+        .title-2{
+            color: rgb(59, 57, 57);
+            font-size: 15px;
+            margin-top: 20px;
+        }
+        .sub{
+            font-family: monospace;
+            font-size: 15px;
+            margin-left: 10%;
+        }
+          .sub-1{
+            font-family:Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            margin-top: 20px;
+           
+        }
+        .courses{
+            margin: 20px;
+        }
+        i{
+            cursor: pointer;
+        }
+        .left{
+            float: left;
+            width: 50%;
+        }
+        .right{
+            float: right;
+            width: 50%;
+        }
+        .person{
+            width: 100%;
+            height: 170px;
+            border-radius: 20px;
+            background-color: #1259f0;
+        }
+        .person img{
+            width: 100%;
+            height: 200px;
+            border-radius: 20px;
+        }
+        .tutors{
+            width: 40%;
+            height: 80px;
+            margin-left: 10px;
+            margin-top: 10px;
+            border-radius: 10px;
+            background-color: #1259f0;;
+        }
+        .user img{
+            width: 50px;
+            height: 50px;
+            margin: 13px;
+            border-radius: 35px;
+        }
+        .name{
+            font-size: 15px;
+            margin: 13px;
+        }
+    </style>
     {{else}}
     <h1>logueate papu</h1>
     {{/if}}

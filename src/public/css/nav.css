@@ -43,12 +43,13 @@ a {
     background-color: var(--white-color);
     z-index: var(--z-fixed);
     transition: .5s
+    
 }
 
 .header_toggle {
     color: var(--first-color);
     font-size: 1.5rem;
-    cursor: pointer
+    cursor: pointer;
 }
 
 .header_img {
@@ -57,11 +58,12 @@ a {
     display: flex;
     justify-content: center;
     border-radius: 50%;
-    overflow: hidden
+    overflow: hidden;
+   
 }
 
 .header_img img {
-    width: 40px
+    width: 40px;
 }
 
 .l-navbar {

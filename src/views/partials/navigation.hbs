@@ -6,7 +6,7 @@
 
             <div class="dropdown">
 
-                <a class="btn btn-secondary dropdown-toggle text-uppercase" type="button" id="dropdownMenuButton"
+                <a type="button" 
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="header_img">
                         {{#if user.profile_image}}
@@ -14,7 +14,8 @@
                         {{else}}
                         <img src="/not-found/not-found-image.png" alt="..." alt="User Profile">
                         {{/if}}
-                    </div> {{user.name}}
+                    </div> 
+                    {{!-- {{user.name}} --}}
                 </a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" href="/links/profile"><i class="fa-solid fa-circle-user"></i> Perfil</a>
