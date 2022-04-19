@@ -55,13 +55,15 @@
                 aria-describedby="button-addon2">
             <button class="btn btn-outline-secondary" type="button" id="button-addon2">Buscar</button>
         </div>
-        <h3 class="sub-1">Cursos
+        <h3 class="sub-1 text-uppercase">Cursos
             <i class="fa-solid fa-ellipsis"></i>
         </h3>
         {{#each courses}}
-        <h3 class="sub-1">{{name}}
-            <i class="fa-solid fa-ellipsis"></i>
-        </h3>
+        <center>
+            <h3 class="sub-1 text-uppercase">{{name}}
+                <i class="fa-solid fa-ellipsis"></i>
+            </h3>
+        </center>
         <div class="person m-2">
             {{#if video}}
 
