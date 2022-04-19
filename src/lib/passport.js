@@ -16,14 +16,22 @@ passport.use('local.signin', new LocalStrategy({
     const user = rows[0];
     const validPassword = await helpers.matchPassword(password, user.password);
 
-    if (validPassword) {
-      done(null, user, req.flash('success','Bienvenido ' + user.name));
+    if (validPassword & rows[0].roleId == 1) {
+      done(null, user, req.flash('success', 'Bienvenido ' + user.name));
+    } else if (validPassword & rows[0].roleId == 2) {
+      done(null, user, req.flash('success', 'Bienvenido ' + user.name));
+      console.log(rows[0].roleId)
+    } else if (validPassword & rows[0].roleId == 3) {
+      done(null, user, req.flash('success', 'Bienvenido ' + user.name));
     } else {
-      done(null, false, req.flash('message','Contraseña Incorecta'));
+      done(null, false, req.flash('message', 'Contraseña Incorecta o aun no cuenta con rol comuniquese con el administrador'));
     }
 
-  }else{
-return done(null, false, req.flash('message','El email no existe'));
+
+
+
+  } else {
+    return done(null, false, req.flash('message', 'El email no existe'));
   }
 }));
 
