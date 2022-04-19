@@ -29,7 +29,7 @@ passport.use('local.signin', new LocalStrategy({
     if (validPassword ) {
       done(null, user, req.flash('success', 'Bienvenido ' + user.name));
     } else {
-      done(null, false, req.flash('message', 'Contraseña Incorecta o aun no cuenta con rol comuniquese con el administrador'));
+      done(null, false, req.flash('message', 'Contraseña Incorecta'));
     }
 
 
