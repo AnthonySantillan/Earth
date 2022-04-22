@@ -13,7 +13,7 @@ passport.use('local.signin', new LocalStrategy({
 }, async (req, email, password, done) => {
   const rows = await pool.query('SELECT * FROM users WHERE email = ?', [email])
 
-  if(rows[0].roleId == 1){
+/*   if(rows[0].roleId == 1){
     console.log(rows[0].roleId);
   } else if (rows[0].roleId == 2) {
     console.log(rows[0].roleId);
@@ -21,7 +21,7 @@ passport.use('local.signin', new LocalStrategy({
     console.log(rows[0].roleId);
   }else{
     return done(null, false, req.flash('message', 'no tienes rol comunicate con el administrador'));
-  }
+  } */
 
   if (rows.length > 0) {
     const user = rows[0];
