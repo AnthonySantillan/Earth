@@ -24,6 +24,9 @@ const notificationsModel = require ('../models/notifications.model');
 
 const messagesModel = require('../models/messages.model');
 
+const coursesModel = require('../models/courses.model');
+
+
 const sequelize = new Sequelize(
   'ArquitectosEarth',
   'root',
@@ -63,6 +66,9 @@ const messages = messagesModel(sequelize, Sequelize);
 
 const services = servicesModel(sequelize, Sequelize);
 
+const courses = coursesModel(sequelize, Sequelize);
+
+
 //Relaciones 
 roles.hasMany(users)
 users.belongsTo(roles)
@@ -76,4 +82,5 @@ module.exports = {
   notifications,
   messages,
   services,
+  courses
 }

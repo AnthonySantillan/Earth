@@ -12,18 +12,28 @@ passport.use('local.signin', new LocalStrategy({
   passReqToCallback: true
 }, async (req, email, password, done) => {
   const rows = await pool.query('SELECT * FROM users WHERE email = ?', [email])
+
+/*   if(rows[0].roleId == 1){
+    console.log(rows[0].roleId);
+  } else if (rows[0].roleId == 2) {
+    console.log(rows[0].roleId);
+  } else if (rows[0].roleId == 3) {
+    console.log(rows[0].roleId);
+  }else{
+    return done(null, false, req.flash('message', 'no tienes rol comunicate con el administrador'));
+  } */
+
   if (rows.length > 0) {
     const user = rows[0];
     const validPassword = await helpers.matchPassword(password, user.password);
 
-    if (validPassword) {
-      done(null, user, req.flash('success','Bienvenido ' + user.name));
+    if (validPassword ) {
+      done(null, user, req.flash('success', 'Bienvenido ' + user.name));
     } else {
-      done(null, false, req.flash('message','Contraseña Incorecta'));
+      done(null, false, req.flash('message', 'Contraseña Incorecta'));
     }
-
-  }else{
-return done(null, false, req.flash('message','El email no existe'));
+  } else {
+    return done(null, false, req.flash('message', 'El email no existe'));
   }
 }));
 

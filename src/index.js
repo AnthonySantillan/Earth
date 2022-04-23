@@ -79,12 +79,16 @@ app.use((req, res, next) => {
 //routes
 app.use(require('./routes'));
 app.use(require('./routes/authentication'));
+app.use(require('./routes/course.route'));
+
 app.use('/links',require('./routes/links'));
 
 
 //public
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public/images/img-profile')));
+app.use(express.static(path.join(__dirname, 'public/videos/videos-courses')));
+
 
 
 // starting the server

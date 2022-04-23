@@ -6,15 +6,15 @@
 
             <div class="dropdown">
 
-                <a class="btn btn-secondary dropdown-toggle text-uppercase" type="button" id="dropdownMenuButton"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="header_img">
                         {{#if user.profile_image}}
                         <img src="/{{user.profile_image}}" loading="lazy" alt="User Profile">
                         {{else}}
                         <img src="/not-found/not-found-image.png" alt="..." alt="User Profile">
                         {{/if}}
-                    </div> {{user.name}}
+                    </div>
+                    {{!-- {{user.name}} --}}
                 </a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" href="/links/profile"><i class="fa-solid fa-circle-user"></i> Perfil</a>
@@ -44,6 +44,10 @@
                         <a href="/links" class="nav_link">
                             <i class="fa-solid fa-users"></i>
                             <span class="nav_name">Users</span>
+                        </a>
+                        <a href="/course-list" class="nav_link">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <span class="nav_name">Courses</span>
                         </a>
                     </div>
                 </div> <a href="/logout" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span
