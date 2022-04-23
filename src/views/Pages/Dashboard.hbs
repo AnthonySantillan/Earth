@@ -1,5 +1,7 @@
 {{#if user}}
 
+ <a id="boton-subir"></a>
+
 <section>
          <div class="content-all" style="margin-bottom: 400px;">
          <div class="content-carrousel">
@@ -61,6 +63,69 @@
     </div>
 </section>
 
+<!--procedures-->
+<section>
+            <div class="contenedor">
+                <h2 class="titulo text-black ">Realiza tus trámites en lÍnea &#8600;</h2>
+                <br>
+                <div class="galeria-port ">
+                    <div class="imagen-port ">
+                        <img src="/img/pam_quito.jpg " alt=" ">
+                        <div class="hover-galeria ">
+                            <a href="https://pam.quito.gob.ec/PAM/Inicio.aspx#gsc.tab=0"><img src="/img/logo_para_consultas.png " alt=" "></a>
+                            <p>PORTAL DE SERVICIOS MUNICIPALES DE QUITO</p>
+                        </div>
+                    </div>
+                    <div class="imagen-port ">
+                        <img src="/img/impuesto_predial.jpg " alt=" ">
+                        <div class="hover-galeria ">
+                            <a href="https://consultas.quito.gob.ec/ "><img src="/img/logo_para_consultas.png " alt=" "></a>
+                            <p>CONSULTA TUS OBLIACIONES A PAGAR EN QUITO</p>
+                        </div>
+                    </div>
+                    <div class="imagen-port ">
+                        <img src="/img/cae_quito.png " alt=" ">
+                        <div class="hover-galeria ">
+                            <a href="https://www.ecp.ec/tramites/ "><img src="/img/logo_para_consultas.png " alt=" "></a>
+                            <p> CAE COLEGIO DE ARQUITECTOS DEL ECUADOR "PICHINCHA "</p>
+                        </div>
+                    </div>
+                    <div class="imagen-port ">
+                        <img src="/img/irm_quito.png " alt=" ">
+                        <div class="hover-galeria ">
+                            <a href="https://pam.quito.gob.ec/mdmq_web_irm/irm/buscarPredio.jsf;jsessionid=V0tOsas0qvhkwY2LVP4BUI8KePQdaHT5-KXnAz7o.t-srv11xopenwildfly01# "><img src="/img/logo_para_consultas.png " alt=" "></a>
+                            <p>IRM INFORME DE REGULARIZACIÓN METROPOLITANA QUITO</p>
+                        </div>
+                    </div>
+                <br>
+            </div>
+        </div>
+ </section>
+<!-- Download -->
+<h2 class="titulo text-black text-center">DESCARGA TUS PROGRAMAS DE DISEÑO ARQUITECTÓNICO E INGENIERÍA</h2>
+    <div class="galeria-cad">
+
+        <div class="picture-cad">
+            <div class=" download ">
+                <h3 class="text- text-black ">Descarga Autocad 2016 de 64bits en INGLES, incluye un tutorial de su instalación</h3>
+                <a href="https://drive.google.com/file/d/1vzpy9zQkjn_XIq4peFnAmMWsQ2PbAfeY/view?usp=sharing " download class="btn btn-outline-success ">DESCARGAR</a>
+            </div>
+            <br>
+        </div>
+        <div class="picture-cad">
+            <div class="download_mind ">
+                <h3 class="text-center text-black ">Descarga Revit 2015 de 64bits en INGLES, incluye un tutorial de su instalaciÓn</h3>
+                <a href=" " download class="btn btn-outline-primary ">DESCARGAR</a>
+            </div>
+        </div>
+        <div class="picture-cad">
+            <div class="download_civil ">
+                <h3 class="text-center text-black ">Descarga Civil CAD 2017 de 64bits en INGLES, incluye un tutorial de su instalación</h3>
+                <a href=" " download class="btn btn-outline-primary ">DESCARGAR</a>
+            </div>
+        </div>
+    </div>
+<!-- Team member -->
 <section id="team" class="pb-5">
     <div class="container">
         <h5 class="section-title h1">OUR TEAM</h5>
@@ -161,7 +226,7 @@
                 </div>
             </div>
             <!-- ./Team member -->
-                        <!-- Team member -->
+        <!-- Team member -->
             <div class="col-xs-12 col-sm-6 col-md-4">
                 <div class="image-flip" >
                     <div class="mainflip flip-0">
@@ -565,7 +630,128 @@ section .section-title {
 .skill-card.large{
     grid-column: 2 span;
 }
+/*procedures*/
+.galeria-port {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+    
+    .imagen-port {
+        width: 24%;
+        margin-bottom: 10px;
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+        box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+    }
 
+    .imagen-port>img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
 
+    .hover-galeria {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        transform: scale(0);
+        background: hsla(110, 89%, 42%, 0.7);
+        transition: transform .5s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .hover-galeria img {
+        width: 50px;
+    }
+
+    .hover-galeria p {
+        color: #fff;
+    }
+
+    .imagen-port:hover .hover-galeria {
+        transform: scale(1);
+    }
+
+/*Download*/
+ .download {
+        background-image: url("/img/autocad_descarga.jpg");
+        text-align: center;
+        max-width: 200px;
+        max-height: 500px;
+        height: 260px;
+    }
+    
+    .download_mind {
+        text-align: center;
+        max-width: 200px;
+        max-height: 500px;
+        height: 260px;
+        background-image: url("/img/revid_descarga.jpg");
+        position: left;
+    }
+    
+    .download_civil {
+        text-align: center;
+        max-width: 200px;
+        max-height: 500px;
+        height: 260px;
+        background-image: url("/img/civil_cad_descarga.png");
+        position: left;
+    }
+    
+    .galeria-cad {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        margin-top: 0%;
+    }
+    
+    .picture-cad {
+        object-fit: cover;
+        display: block;
+    }
+
+/*botton down-up*/
+
+#boton-subir {
+    display: inline-block;
+    background-color: #0c36c4;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 4px;
+    margin: 0px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition: background-color .3s;
+    z-index: 1000;
+}
+
+#boton-subir:hover {
+    cursor: pointer;
+    background-color: rgb(8, 8, 8);
+}
+
+#boton-subir:active {
+    background-color: rgb(8, 8, 8);
+}
+
+#boton-subir::after {
+    content: "\f077";
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2em;
+    line-height: 50px;
+    color: #fff;
+}
 
 </style>
