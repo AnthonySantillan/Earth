@@ -6,59 +6,61 @@
             Cursos
         </h3>
     </div>
-    <div class="left">
-        <div class="row courses">
-            <h1 class="title">Populares</h1>
-            <div class="col-5">
-                <div class="course"></div>
-                <h3 class="sub">AutoCad
-                    <i class="fa-solid fa-angle-right"></i>
-                </h3>
-            </div>
-            <div class="col-5">
-                <div class="course"></div>
-                <h3 class="sub">AutoCad
-                    <i class="fa-solid fa-angle-right"></i>
-                </h3>
-            </div>
-            <h1 class="title-2">Profesores Populares</h1>
-            <div class="tutors">
-                <div class="user">
-                    <div class="left">
-                        <img src="/not-found/not-found-image.png">
-                    </div>
-                    <div class="right">
-                        <h3 class="name">nombre del profesor</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="tutors">
-                <div class="user">
-                    <div class="left">
-                        <img src="/not-found/not-found-image.png">
-                    </div>
-                    <div class="right">
-                        <h3 class="name">nombre del profesor</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!--    <div class="left">-->
+<!--        <div class="row courses">-->
+<!--            <h1 class="title">Populares</h1>-->
+<!--            <div class="col-5">-->
+<!--                <div class="course"></div>-->
+<!--                <h3 class="sub">AutoCad-->
+<!--                    <i class="fa-solid fa-angle-right"></i>-->
+<!--                </h3>-->
+<!--            </div>-->
+<!--            <div class="col-5">-->
+<!--                <div class="course"></div>-->
+<!--                <h3 class="sub">AutoCad-->
+<!--                    <i class="fa-solid fa-angle-right"></i>-->
+<!--                </h3>-->
+<!--            </div>-->
+<!--            <h1 class="title-2">Profesores Populares</h1>-->
+<!--            <div class="tutors">-->
+<!--                <div class="user">-->
+<!--                    <div class="left">-->
+<!--                        <img src="/not-found/not-found-image.png">-->
+<!--                    </div>-->
+<!--                    <div class="right">-->
+<!--                        <h3 class="name">nombre del profesor</h3>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="tutors">-->
+<!--                <div class="user">-->
+<!--                    <div class="left">-->
+<!--                        <img src="/not-found/not-found-image.png">-->
+<!--                    </div>-->
+<!--                    <div class="right">-->
+<!--                        <h3 class="name">nombre del profesor</h3>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--    </div>-->
+    <div class="right">
 
     </div>
-    <div class="right">
-        <h1 class="title">Busqueda</h1>
-        <h3 class="sub-1">Mas de 100 cursos disponibles
-            <i class="fa-solid fa-ellipsis"></i>
-        </h3>
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Search" aria-label="Search"
-                aria-describedby="button-addon2">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Buscar</button>
-        </div>
-        <h3 class="sub-1 text-uppercase">Cursos
-            <i class="fa-solid fa-ellipsis"></i>
-        </h3>
-        {{#each courses}}
+    <h1 class="title">Busqueda</h1>
+    <h3 class="sub-1">Mas de 100 cursos disponibles
+        <i class="fa-solid fa-ellipsis"></i>
+    </h3>
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Search" aria-label="Search"
+               aria-describedby="button-addon2">
+        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Buscar</button>
+    </div>
+    <h3 class="sub-1 text-uppercase">Cursos
+        <i class="fa-solid fa-ellipsis"></i>
+    </h3>
+{{#each courses}}
         <center>
             <h3 class="sub-1 text-uppercase">{{name}}
                 <i class="fa-solid fa-ellipsis"></i>
@@ -67,15 +69,15 @@
         <div class="person m-2">
             {{#if video}}
 
-            <video poster="/images/logo.jpeg" loop="loop" controls="controls" tabindex="0"
-                style="width: 100% ; height: 170px; border-radius: 20px;">
-                <source src="/{{video}}" type='video/webm; codecs="vp8, vorbis"' />
-            </video>
+                <video poster="/images/logo.jpeg" loop="loop" controls="controls" tabindex="0"
+                       style="width: 100% ; height: 170px; border-radius: 20px;">
+                    <source src="/{{video}}" type='video/webm; codecs="vp8, vorbis"' />
+                </video>
             {{else}}
-            <video poster="/images/logo.jpeg" loop="loop" controls="controls" tabindex="0"
-                style="width: 100% ; height: 170px; border-radius: 20px;">
-                <source src="/videos/videos-courses/not-found/not-found.mp4" type='video/webm; codecs="vp8, vorbis"' />
-            </video>
+                <video poster="/images/logo.jpeg" loop="loop" controls="controls" tabindex="0"
+                       style="width: 100% ; height: 170px; border-radius: 20px;">
+                    <source src="/videos/videos-courses/not-found/not-found.mp4" type='video/webm; codecs="vp8, vorbis"' />
+                </video>
             {{/if}}
         </div>
         <form action="/video/{{id}}" method="POST" encType="multipart/form-data">
@@ -88,14 +90,13 @@
                 </div>
             </div>
         </form>
-        {{else}}
+{{else}}
         <div class="col-md-4 mx-auto">
             <div class="card card-body text-center">
                 <p>No hay cursos disponibles.</p>
             </div>
         </div>
-        {{/each}}
-    </div>
+{{/each}}
     <style>
         .course {
             background-color: #1259f0;
