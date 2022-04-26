@@ -10,7 +10,7 @@
             <p class="text-lg mb-5">Encienda el motor de crecimiento más poderoso que jamás haya construido para su empresa.</p>
 
             <a href="#" class="btn btn-outline border text-secondary">Más información</a>
-            <a href="#" class="btn btn-primary btn-split ml-2">Ver video<div class="fab"><span class="mai-play"></span></div></a>
+            <a target="blank_" href="https://drive.google.com/file/d/19M_mwjpsstyGiYqB4bvWTzBXZ23EQ4y8/view?usp=sharing" class="btn btn-primary btn-split ml-2">Ver video<div class="fab"><span class="mai-play"></span></div></a>
           </div>
           <div class="col-lg-6 py-3 wow zoomIn">
             <div class="img-place">
@@ -41,7 +41,7 @@
           <div class="col-md-6 col-lg-4 py-3 wow fadeInUp">
             <div class="d-flex flex-row">
               <div class="img-fluid mr-3">
-                <img src="../assets/img/icon_pattern.svg" alt="">
+                <img src="" alt="">
               </div>
               <div>
                 <h5>Soluciones completas para organizaciones globales</h5>
@@ -53,7 +53,7 @@
           <div class="col-md-6 col-lg-4 py-3 wow fadeInUp">
             <div class="d-flex flex-row">
               <div class="img-fluid mr-3">
-                <img src="../assets/img/icon_pattern.svg" alt="">
+                <img src="" alt="">
               </div>
               <div>
                 <h5>Asesoramiento financiero por nuestro asesor</h5>
@@ -70,15 +70,15 @@
         <div class="row">
           <div class="col-lg-6 py-3 wow zoomIn">
             <div class="img-place text-center">
-              <img src="../assets/img/bg_image_2.png" alt="">
+              <img src="https://definicion.de/wp-content/uploads/2010/09/arquitectura-1.jpg" alt="">
             </div>
           </div>
           <div class="col-lg-6 py-3 wow fadeInRight">
-            <h2 class="title-section">Nosotros Som@s <span class="marked">Dinamico</span> Equipo de personas creativas</h2>
+            <h2 class="title-section">Nosotros Somos un <span class="marked">Dinamico</span> Equipo de personas creativas</h2>
             <div class="divider"></div>
             <p>Brindamos servicios de marketing a nuevas empresas y pequeñas empresas que buscan socios para sus medios digitales, diseño y desarrollo, generación de oportunidades y comunicación.</p>
             <div class="img-place mb-3">
-              <img src="../assets/img/testi_image.png" alt="">
+              <img src="" alt="">
             </div>
             <a href="#" class="btn btn-primary">Más detalles</a>
             <a href="#" class="btn btn-outline border ml-2">Historias de éxito</a>
@@ -118,7 +118,7 @@
           </div>
           <div class="col-lg-6 py-3 wow zoomIn">
             <div class="img-place text-center">
-              <img src="../assets/img/bg_image_3.png" alt="">
+              <img src="https://www.arkiplus.com/wp-content/uploads/2015/12/arquitectura-y-dise%C3%B1o.jpg" alt="">
             </div>
           </div>
         </div>
@@ -160,7 +160,12 @@
             <div class="row align-items-center">
               <div class="col-md-6 py-3">
                 <div class="testi-image">
-                  <img src="../assets/img/person/person_1.jpg" alt="">
+                  {{#if user.profile_image}}
+                    <img src="/{{user.profile_image}}" loading="lazy" alt="User Profile">
+                    {{else}}
+                    <img src="/not-found/not-found-image.png" alt="..." alt="User Profile">
+                    {{/if}}
+
                 </div>
               </div>
               <div class="col-md-6 py-3">
@@ -178,7 +183,7 @@
             <div class="row align-items-center">
               <div class="col-md-6 py-3">
                 <div class="testi-image">
-                  <img src="../assets/img/person/person_2.jpg" alt="">
+                  <img src="https://i.pinimg.com/236x/6f/fb/06/6ffb06eaeaace0d90a0596fac6c6377d.jpg" alt="">
                 </div>
               </div>
               <div class="col-md-6 py-3">
